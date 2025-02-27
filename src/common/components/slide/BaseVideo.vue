@@ -100,7 +100,7 @@
 	import ItemToolbar from './ItemToolbar.vue'
 	import ItemDesc from './ItemDesc.vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
-	import { SlideItemPlayStatus } from '@/common/utils/const_var'
+	import { SlideItemPlayStatus } from '@/constants/shorts'
 	import {
 		ref,
 		computed,

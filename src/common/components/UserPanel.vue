@@ -301,7 +301,7 @@
 	} from '@/common/utils'
 	import { useNav } from '@/common/utils/hooks/useNav'
 	import Posters from '@/common/components/Posters.vue'
-	import { DefaultUser } from '@/common/utils/const_var'
+	import { DefaultUser } from '@/constants/shorts'
 	import Loading from '@/common/components/Loading.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import { userVideoList } from '@/api/shortsUser'

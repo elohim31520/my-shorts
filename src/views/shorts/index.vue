@@ -237,7 +237,7 @@
 	import Slide0 from '@/views/shorts/slide/Slide0.vue'
 	import Slide2 from '@/views/shorts/slide/Slide2.vue'
 	import Slide4 from '@/views/shorts/slide/Slide4.vue'
-	import { DefaultUser } from '@/common/utils/const_var'
+	import { DefaultUser } from '@/constants/shorts'
 	import { _no } from '@/common/utils'
 	// import LongVideo from '@/views/shorts/slide/LongVideo.vue'
 	import { useBaseStore } from '@/stores/shorts'

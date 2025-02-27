@@ -1,5 +1,5 @@
 <template>
- <h1>123</h1>
+ <a href="/shorts">/shorts</a>
 </template>
 
 <script>

@@ -8,7 +8,7 @@
 		slideTouchMove,
 		slideTouchStart,
 	} from '@/common/utils/slide'
-	import { SlideType } from '@/common/utils/const_var'
+	import { SlideType } from '@/constants/shorts'
 	import { _css } from '@/common/utils/dom'
 
 	const props = defineProps({

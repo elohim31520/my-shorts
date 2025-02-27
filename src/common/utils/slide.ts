@@ -1,6 +1,6 @@
 import bus from '@/common/utils/bus'
 import { _stopPropagation } from '@/common/utils/index'
-import { SlideType } from '@/common/utils/const_var'
+import { SlideType } from '@/constants/shorts'
 import { nextTick } from 'vue'
 import { _css } from '@/common/utils/dom'
 

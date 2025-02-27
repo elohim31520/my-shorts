@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { friends, panel } from '@/api/shortsUser'
-import DISPLAY_TYPE from '@/common/utils/const_var'
+import DISPLAY_TYPE from '@/constants/shorts'
 import resource from '@/mock/resource'
 
 export const useBaseStore = defineStore('base', {

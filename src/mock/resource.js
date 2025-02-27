@@ -1,4 +1,4 @@
-import CONST_VAR from '@/common/utils/const_var'
+import CONST_VAR from '@/constants/shorts'
 
 export default {
 	videos: [],

@@ -31,7 +31,7 @@
 		slideTouchMove,
 		slideTouchStart,
 	} from '@/common/utils/slide'
-	import { SlideType } from '@/common/utils/const_var'
+	import { SlideType } from '@/constants/shorts'
 	import SlideItem from '@/common/components/slide/SlideItem.vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
 	import Loading from '@/common/components/Loading.vue'
