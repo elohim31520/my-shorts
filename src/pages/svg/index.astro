@@ -1,0 +1,10 @@
+---
+import Layout from '@/layouts/index.astro'
+import SVG from '@/views/svg/index.vue'
+const icons = await Astro.glob('@/icons/svg/*.svg')
+const data = { icons }
+---
+
+<Layout title="Icon">
+	<SVG client:load data={data} />
+</Layout>

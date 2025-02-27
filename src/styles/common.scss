@@ -1,0 +1,166 @@
+.com-body-overlay {
+	overflow: hidden;
+}
+
+body {
+	background-color: #fafafa;
+}
+
+@mixin btn-style {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 1.25rem;
+	font-size: 0.875rem;
+	padding: 0.375rem 0.9375rem;
+}
+.com-def-btn {
+	color: #656565;
+	border-color: #e0e0e0;
+	background-color: #fff;
+	@include btn-style;
+}
+.com-def-btn-active {
+	color: $primary-color !important;
+	border-color: $primary-color !important;
+	background-color: #efffe5 !important;
+	@include btn-style;
+}
+.com-btn-follow {
+	width: 3.75rem;
+	height: 1.5625rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: 0.9375rem;
+	background-image: linear-gradient(white, white),
+		linear-gradient(to left, #ff3a75 100%, #f82430 0%);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	span {
+		font-size: 0.875rem;
+		font-weight: 400;
+		background-image: linear-gradient(to left, #ff3a75 100%, #f82430 0%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.com-subscribe-btn {
+	border: 1px solid #f82430;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: center;
+	margin-left: auto;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-image: linear-gradient(to right, #f82430 0%, #ff3a75 100%);
+	-webkit-text-fill-color: transparent;
+}
+
+.com-btn-followed {
+	width: 3.75rem;
+	height: 1.5625rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #e0e0e0;
+	border-radius: 0.9375rem;
+	span {
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: #656565;
+	}
+}
+
+.com-fade-in {
+	animation: com-fadeIn 0.5s ease-in;
+}
+
+.com-min-h-with-header {
+	min-height: calc(100dvh - 2.8125rem);
+}
+
+@keyframes com-fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+//van-image當圖片加載失敗，默認圖片不想要變成小icon
+.com-van-image-error-fine {
+	.van-icon__image {
+		width: unset;
+		height: unset;
+	}
+	.van-image__error {
+		position: relative;
+	}
+}
+
+// van-action-sheet 垂直置中定位修正
+.main-wrap {
+	.van-popup.van-popup--bottom {
+		width: 480px;
+		left: calc(50% - 240px);
+	}
+	@media (max-width: 480px) {
+		.van-popup.van-popup--bottom {
+			width: 100%;
+			left: 0;
+		}
+	}
+}
+
+html {
+	font-size: 16px;
+	@media (min-width: 400px) {
+		font-size: 18px;
+	}
+	@media (min-width: 430px) {
+		font-size: 19px;
+	}
+	@media (min-width: 480px) {
+		font-size: 20px;
+	}
+	@media (min-width: 480px) {
+		.van-popup--top {
+			left: calc(50% - 240px) !important;
+			width: 480px !important;
+		}
+	}
+}
+
+.van-image {
+	display: block !important;
+}
+
+.van-image-preview__overlay {
+	background-color: #000000b2 !important;
+}
+
+.van-toast {
+	border: 0.0625rem solid #fff;
+	border-radius: 0.625rem !important;
+	background-color: #434343e5 !important;
+	box-shadow: 0 0 0.25rem 0 #0000001a;
+}
+
+.van-toast__text {
+	font-size: 1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	transition:
+		background-color 0s 600000s,
+		color 0s 600000s !important;
+}

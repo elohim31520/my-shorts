@@ -1,0 +1,47 @@
+---
+import Layout from '@/layouts/index.astro'
+import Home from '@/views/home/index.vue'
+import { getLastLotteryResultApi } from '@/api/lottery'
+import { parseSearchParams, loseWeight } from '@/modules/util'
+import { pageStore } from '@/stores'
+import { getRecommendGallery, getPictureSeriesApi } from '@/api/picture'
+import { getBbsSiteList } from '@/api/recommend'
+
+const query = parseSearchParams(Astro.url.searchParams)
+const lotteryType = _get(pageStore, 'lottery.lotteryType', 'a6')
+
+const [lotteryResult, galleryResult, pictureSeries, bbsSiteList] =
+	await Promise.all([
+		getLastLotteryResultApi({ lotteryType }),
+		getRecommendGallery({ lotteryType }),
+		getPictureSeriesApi({ lotteryType }).then((res) => {
+			loseWeight(res, ['seriesShortName', 'seriesCode'])
+			_set(res, 'data', _slice(_get(res, 'data'), 0, 10))
+			return res
+		}),
+		getBbsSiteList().then((res) => {
+			loseWeight(res, [
+				'siteName',
+				'focusGameType',
+				'siteUrl1',
+				'siteUrl2',
+				'siteUrl3',
+				'siteUrl4',
+				'siteUrl5',
+			])
+			return res
+		}),
+		,
+	])
+const data = {
+	lotteryResult,
+	galleryResult,
+	pictureSeries,
+	bbsSiteList,
+	query,
+}
+---
+
+<Layout title="首頁">
+	<Home client:load data={data} />
+</Layout>

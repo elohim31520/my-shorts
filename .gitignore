@@ -1,0 +1,19 @@
+.DS_Store
+node_modules
+/dist
+/types/auto-imports.d.ts
+/types/components.d.ts
+vantStyleImport.js
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.idea
+.astro
+.svn
+
+log
+
+.env

@@ -1,0 +1,41 @@
+---
+import '@/styles/common.scss'
+import AnalysisScript from '@/components/AnalysisScript/index.astro'
+import Wrap from '@/components/Wrap/index.vue'
+
+import { getCdnUrl } from '@/modules/util.js'
+
+interface Props {
+	title: string
+}
+const { title } = Astro.props
+const analysisEnable = import.meta.env.MODE !== 'development'
+const { webTitle, icon } = Astro.locals
+const separator = webTitle ? '-' : ''
+const errors = JSON.stringify(Astro.locals.errors)
+const logs = JSON.stringify(Astro.locals.logs)
+const hasLogs = !!Astro.locals.logs
+const lotteryTypes = JSON.stringify(Astro.locals.lotteryTypes || '[]')
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href={getCdnUrl(icon)} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{webTitle + separator + title}</title>
+		<script
+			set:html={`window.CDN_HOST='%PLACEHOLDER_CDN%';window.LOTTERY_TYPES=${lotteryTypes};window.WEB_TITLE='${webTitle}';window.ERRORS=${errors};if(${hasLogs}){console.table(${logs});}if('scrollRestoration' in history){history.scrollRestoration='manual';}document.documentElement.style.setProperty('--height-unit',CSS.supports('height','100dvh')?'1dvh':'1vh');`}
+		/>
+	</head>
+	<body>
+		<div class="main-wrap max-w-480px mx-auto">
+			<slot />
+			<Wrap client:load />
+		</div>
+		{analysisEnable ? <AnalysisScript /> : ''}
+	</body>
+</html>

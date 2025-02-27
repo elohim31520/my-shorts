@@ -1,0 +1,10 @@
+---
+import { getConfig } from '@/api/common.js'
+let domain = import.meta.env.PUBLIC_DOMAIN_SPECIFY
+if (!domain) domain = _split(Astro.request.headers.get('host'), ':')
+const res = await getConfig(domain)
+const { statsCodeJsUrl, statsCodeInit } = _get(res, 'data', {})
+---
+
+<Fragment set:html={statsCodeJsUrl} />
+<Fragment set:html={statsCodeInit} />
