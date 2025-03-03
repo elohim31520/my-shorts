@@ -2,9 +2,9 @@
 	import BaseMusic from '../BaseMusic.vue'
 	import { _formatNumber, cloneDeep } from '@/common/utils'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
-	// import { Icon } from '@iconify/vue'
 	import { useClick } from '@/common/utils/hooks/useClick'
 	import { inject } from 'vue'
+	import SvgIcon from '@/components/SvgIcon/index.vue'
 
 	const props = defineProps({
 		isMy: {
@@ -96,36 +96,28 @@
 		</div>
 		<div class="love mb2r" v-click="loved">
 			<div>
-				<img
-					src="/shorts/img/icon/love.svg"
-					class="love-image"
-					v-if="!item.isLoved"
-				/>
-				<img
-					src="/shorts/img/icon/loved.svg"
-					class="love-image"
-					v-if="item.isLoved"
+				<SvgIcon
+					size="2.375rem"
+					class="color-white"
+					:name="item.isLoved === 'y' ? 'like_click3' : 'like_fill'"
 				/>
 			</div>
 			<span>{{ _formatNumber(item.statistics.digg_count) }}</span>
 		</div>
 		<div class="message mb2r" v-click="showComments">
-			<!-- <Icon
-				icon="mage:message-dots-round-fill"
-				class="icon"
-				style="color: white"
-			/> -->
+			<SvgIcon size="2.375rem" class="color-white" name="message-10" />
+
 			<span>{{ _formatNumber(item.statistics.comment_count) }}</span>
 		</div>
 		<!--TODO     -->
 		<div class="message mb2r" v-click="collected">
-			<!-- <Icon
+			<SvgIcon
 				v-if="item.isCollect"
-				icon="ic:round-star"
-				class="icon"
-				style="color: rgb(252, 179, 3)"
+				size="2.375rem"
+				class="color-white"
+				name="icon_Star"
 			/>
-			<Icon v-else icon="ic:round-star" class="icon" style="color: white" /> -->
+			<SvgIcon v-else size="2.375rem" class="color-white" name="star" />
 			<span>{{ _formatNumber(item.statistics.collect_count) }}</span>
 		</div>
 		<div
@@ -147,11 +139,7 @@
 		>
 			<img src="/shorts/img/icon/menu-white.png" alt="" class="share-image" />
 		</div>
-		<!--    <BaseMusic-->
-		<!--        :cover="item.music.cover"-->
-		<!--        v-click="$router.push('/home/music')"-->
-		<!--    /> -->
-		<BaseMusic />
+		<BaseMusic :cover="item.music.cover" />
 	</div>
 </template>
 
@@ -240,14 +228,6 @@
 			span {
 				font-size: 12px;
 			}
-		}
-
-		.icon {
-			font-size: 40px;
-		}
-
-		.loved {
-			background: red;
 		}
 	}
 </style>

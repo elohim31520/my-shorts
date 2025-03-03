@@ -8,10 +8,11 @@
 		>
 			<div class="wrap">
 				<SvgIcon
-					size="1.25rem"
+					size="3.25rem"
 					name="icon_muted"
+					class="color-white"
 				/>
-				<Icon icon="flowbite:volume-mute-solid" />
+				
 				<span :style="{ opacity: showMutedNotice ? 1 : 0 }">取消静音</span>
 			</div>
 		</div>
@@ -25,8 +26,8 @@
 <script setup lang="ts">
 	import { inject, onMounted, computed, ref } from 'vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
-	// import { Icon } from '@iconify/vue'
 	import { useClick } from '@/common/utils/hooks/useClick'
+	import SvgIcon from '@/components/SvgIcon/index.vue'
 
 	const isPlaying = inject<boolean>('isPlaying')
 	const isMuted = inject('isMuted')
