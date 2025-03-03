@@ -353,10 +353,12 @@
 	}
 
 	function click({ uniqueId, index, type }) {
+		console.log(uniqueId, index, type);
+		
 		if (
 			props.position.uniqueId === uniqueId &&
 			props.position.index === index
-		) {
+		) {			
 			if (type === EVENT_KEY.ITEM_TOGGLE) {
 				if (props.isLive) {
 					pause()
