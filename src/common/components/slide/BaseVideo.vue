@@ -25,7 +25,7 @@
 			<p>您的浏览器不支持 video 标签。</p>
 		</video>
 		<!-- <Icon v-if="!isPlaying" icon="fluent:play-28-filled" class="pause-icon"  /> -->
-		<SvgIcon v-if="!isPlaying" class="mb-3" size="1.375rem" name="play" />
+		<SvgIcon v-if="!isPlaying" class="pause-icon" size="1.375rem" name="play" />
 		<div class="float">
 			<template v-if="isLive">
 				<div class="living">点击进入直播间</div>
@@ -360,10 +360,12 @@
 			if (type === EVENT_KEY.ITEM_TOGGLE) {
 				if (props.isLive) {
 					pause()
-					bus.emit(EVENT_KEY.NAV, {
-						path: '/home/live',
-						query: { id: props.item.aweme_id },
-					})
+					// TODO
+					console.log('todo:這裡要跳轉且代參數：', { id: props.item.aweme_id });
+					// bus.emit(EVENT_KEY.NAV, {
+					// 	path: '/home/live',
+					// 	query: { id: props.item.aweme_id },
+					// })
 				} else {
 					if (state.status === SlideItemPlayStatus.Play) {
 						pause()
@@ -394,6 +396,8 @@
 	}
 
 	function pause() {
+		console.log('暫停');
+		
 		state.status = SlideItemPlayStatus.Pause
 		videoEl.value.pause()
 	}

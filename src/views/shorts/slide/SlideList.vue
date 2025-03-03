@@ -84,8 +84,8 @@
 		if (baseStore.loading) return
 		baseStore.loading = true
 		let res = await props.api({
-			start: refresh ? 0 : state.list.length,
-			pageSize: state.pageSize,
+			page: refresh ? 1 : state.list.length,
+			size: state.pageSize,
 		})
 		// console.log('getSlide4Data-', refresh, res, state.totalSize, state.list.length)
 		baseStore.loading = false

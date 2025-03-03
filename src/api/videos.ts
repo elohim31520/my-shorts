@@ -14,11 +14,13 @@ export function historyVideo(params?: any, data?: any) {
 }
 
 export async function recommendedVideo(params = {}) {
-	const { pageNo = 1, pageSize = 10 } = params // 設置默認值
+	console.log('切頁：',params.page);
+	
+	const { page = 1, size = 10 } = params
 
 	try {
 		const response = await axios.get('/data/videos.json')
-		const videos = response.data // 直接使用 JSON 數據，無需 JSON.parse
+		const videos = response.data
 
 		const updatedVideos = videos.map((vo) => {
 			const videoItem = { ...vo, type: 'recommend-video' }
@@ -29,22 +31,18 @@ export async function recommendedVideo(params = {}) {
 			return videoItem
 		})
 
-		// 計算分頁的起始和結束索引
-		const startIndex = (pageNo - 1) * pageSize
-		const endIndex = startIndex + pageSize
-
-		// 根據 pageSize 切片數據
+		const startIndex = (page - 1) * size
+		const endIndex = startIndex + size
 		const paginatedVideos = updatedVideos.slice(startIndex, endIndex)
 
-		// 回傳分頁結果及總數
 		return Promise.resolve({
 			success: true,
 			code: 200,
 			data: {
 				list: paginatedVideos,
 				total: updatedVideos.length,
-				pageNo,
-				pageSize,
+				page,
+				size,
 			},
 		})
 	} catch (error) {

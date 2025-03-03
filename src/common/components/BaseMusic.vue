@@ -7,6 +7,10 @@
 			v-if="isMuted"
 		>
 			<div class="wrap">
+				<SvgIcon
+					size="1.25rem"
+					name="icon_muted"
+				/>
 				<Icon icon="flowbite:volume-mute-solid" />
 				<span :style="{ opacity: showMutedNotice ? 1 : 0 }">取消静音</span>
 			</div>
@@ -15,13 +19,6 @@
 			class="music"
 			:src="item.music?.cover_thumb.url_list[0]"
 			:style="style"
-			v-click="
-				() =>
-					bus.emit(EVENT_KEY.NAV, {
-						path: '/home/music',
-						query: { id: item.aweme_id },
-					})
-			"
 		/>
 	</div>
 </template>

@@ -1,28 +1,3 @@
-<script setup lang="ts">
-	import { inject, reactive } from 'vue'
-
-	const props = defineProps({
-		isMy: {
-			type: Boolean,
-			default: () => {
-				return false
-			},
-		},
-		isLive: {
-			type: Boolean,
-			default: () => {
-				return false
-			},
-		},
-	})
-
-	const item = inject<any>('item')
-
-	const state = reactive({
-		isAttention: false,
-		test: [1, 2],
-	})
-</script>
 <template>
 	<div class="item-desc ml1r mb1r">
 		<div class="content" v-if="!props.isMy">
@@ -38,7 +13,7 @@
 			</div>
 			<div class="live" v-if="props.isLive">直播中</div>
 			<div class="name mb1r f18 fb" @click.stop="$emit('goUserInfo')">
-				@{{ item?.author?.nickname }}
+				@{{ item?.author?.nickname || '作者暱稱' }}
 			</div>
 			<div class="description">
 				{{ item.desc }}
@@ -70,6 +45,33 @@
 		</div>
 	</div>
 </template>
+
+
+<script setup>
+	import { inject, reactive } from 'vue'
+
+	const props = defineProps({
+		isMy: {
+			type: Boolean,
+			default: () => {
+				return false
+			},
+		},
+		isLive: {
+			type: Boolean,
+			default: () => {
+				return false
+			},
+		},
+	})
+
+	const item = inject('item')
+
+	const state = reactive({
+		isAttention: false,
+		test: [1, 2],
+	})
+</script>
 
 <style scoped lang="scss">
 	.item-desc {

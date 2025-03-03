@@ -220,6 +220,7 @@
 		onUnmounted,
 		reactive,
 		ref,
+		onBeforeMount,
 	} from 'vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
 	import { useNav } from '@/common/utils/hooks/useNav'
@@ -296,6 +297,21 @@
 		}
 		// console.log('item', item)
 	}
+
+	onBeforeMount(() => {
+		//把app.ts 在做的 移到此
+		window.isMoved = false
+		window.isMuted = true
+		window.showMutedNotice = true
+
+		setTimeout(() => {
+			bus.emit(EVENT_KEY.HIDE_MUTED_NOTICE)
+			window.showMutedNotice = false
+		}, 2000)
+		bus.on(EVENT_KEY.REMOVE_MUTED, () => {
+			window.isMuted = false
+		})
+	})
 
 	onMounted(() => {
 		baseStore.bodyHeight = document.documentElement.clientHeight
