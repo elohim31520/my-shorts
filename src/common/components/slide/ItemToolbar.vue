@@ -14,32 +14,34 @@
 				</div>
 			</transition>
 		</div>
-		<div class="love mb2r" v-click="loved">
-			<div>
-				<SvgIcon
-					size="2.375rem"
-					class="color-white"
-					:name="item.isLoved === 'y' ? 'like_click3' : 'like_fill'"
-				/>
-			</div>
-			<span>{{ _formatNumber(item.statistics.digg_count) }}</span>
-		</div>
-		<div class="message mb2r" v-click="showComments">
-			<SvgIcon size="2.375rem" class="color-white" name="message-10" />
-
-			<span>{{ _formatNumber(item.statistics.comment_count) }}</span>
-		</div>
-		<!--TODO     -->
 		<div class="message mb2r" v-click="collected">
 			<SvgIcon
 				v-if="item.isCollect"
 				size="2.375rem"
 				class="color-white"
-				name="icon_Star"
+				name="icon_collect_Click3"
 			/>
 			<SvgIcon v-else size="2.375rem" class="color-white" name="star" />
 			<span>{{ _formatNumber(item.statistics.collect_count) }}</span>
 		</div>
+
+		<div class="message mb2r" v-click="showComments">
+			<SvgIcon size="2.375rem" class="color-white" name="message-10" />
+
+			<span>{{ _formatNumber(item.statistics.comment_count) }}</span>
+		</div>
+
+		<div class="love mb2r" v-click="loved">
+			<div>
+				<SvgIcon
+					size="2.375rem"
+					class="color-white"
+					:name="item.isLoved ? 'like_click3' : 'like_click1'"
+				/>
+			</div>
+			<span>{{ _formatNumber(item.statistics.digg_count) }}</span>
+		</div>
+
 		<div
 			v-if="!props.isMy"
 			class="share mb2r"
