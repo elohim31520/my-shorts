@@ -2,11 +2,10 @@
 	<div class="indicator-home" :class="{ isLight }">
 		<div class="notice" :style="noticeStyle"><span>下拉刷新内容</span></div>
 		<div class="toolbar" ref="toolbar" :style="toolbarStyle">
-			<Icon
-				icon="tabler:menu-deep"
-				class="search"
+			<SvgIcon
+				name="icon_button_Menu"
+				size="1.875rem"
 				@click="$emit('showSlidebar')"
-				style="transform: rotateY(180deg)"
 			/>
 			<div class="tab-ctn">
 				<div class="tabs" ref="tabs">
@@ -311,14 +310,9 @@
 					height: 2.6px;
 					width: 26px;
 					//width: calc(100% / 5);
-					background: #34C759;
+					background: #34c759;
 					border-radius: 5px;
 				}
-			}
-
-			.search {
-				color: white;
-				font-size: 24px;
 			}
 		}
 
