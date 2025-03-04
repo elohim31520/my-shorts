@@ -110,7 +110,6 @@
 		reactive,
 		useTemplateRef,
 	} from 'vue'
-	// import { Icon } from '@iconify/vue'
 	import { _css } from '@/common/utils/dom'
 
 	defineOptions({
@@ -230,7 +229,7 @@
 			state.videoScreenHeight =
 				videoEl.value.videoHeight / (videoEl.value.videoWidth / state.width)
 			state.duration = videoEl.value.duration
-			state.progressBarRect = progressEl.getBoundingClientRect()
+			state.progressBarRect = progressEl.value.getBoundingClientRect()
 			state.step = state.progressBarRect.width / Math.floor(state.duration)
 			videoEl.value.addEventListener('timeupdate', fun)
 		})
