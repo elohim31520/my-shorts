@@ -28,20 +28,13 @@
 						:class="{ active: index === 2 }"
 						@click.stop="change(2)"
 					>
-						<span>图纸</span>
-					</div>
-					<div
-						class="tab"
-						:class="{ active: index === 3 }"
-						@click.stop="change(3)"
-					>
 						<span>直播</span>
 						<img src="/shorts/img/icon/live.webp" class="tab2-img" />
 					</div>
 					<div
 						class="tab"
-						:class="{ active: index === 4 }"
-						@click.stop="change(4)"
+						:class="{ active: index === 3 }"
+						@click.stop="change(3)"
 					>
 						<span>推荐</span>
 					</div>
