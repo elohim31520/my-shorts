@@ -108,7 +108,6 @@
 					:change-active-index-use-anim="false"
 					v-model:index="state.navIndex"
 				>
-					<!--          <SlideItem></SlideItem>-->
 					<Slide0 :active="state.navIndex === 0 && state.baseIndex === 1" />
 					<SlideItem></SlideItem>
 					<Slide2 :active="state.navIndex === 2 && state.baseIndex === 1" />
@@ -224,7 +223,6 @@
 	import ShareTo from '@/views/shorts/components/ShareTo.vue'
 	import DouyinCode from '@/common/components/DouyinCode.vue'
 	import FollowSetting from '@/views/shorts/components/FollowSetting.vue'
-	// import BlockDialog from '../message/components/BlockDialog.vue'
 	import Search from '@/common/components/Search.vue'
 	import ConfirmDialog from '@/common/components/dialog/ConfirmDialog.vue'
 	import FollowSetting2 from '@/views/shorts/components/FollowSetting2.vue'

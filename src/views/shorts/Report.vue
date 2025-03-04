@@ -227,6 +227,8 @@
 	import { onMounted, reactive } from 'vue'
 	import { useNav } from '@/common/utils/hooks/useNav'
 
+	import BaseHeader from '@/common/components/BaseHeader.vue'
+
 	defineOptions({
 		name: 'Report',
 	})

@@ -1,21 +1,7 @@
-import BaseHeader from '../components/BaseHeader.vue'
-import SlideItem from '../components/slide/SlideItem.vue'
-import BaseMask from '../components/BaseMask.vue'
-import Loading from '../components/Loading.vue'
-import BaseButton from '../components/BaseButton.vue'
 import Dom from './dom'
 import bus, { EVENT_KEY } from './bus'
-import SlideHorizontal from '@/common/components/slide/SlideHorizontal.vue'
 
 export default {
-	components: {
-		BaseHeader,
-		SlideHorizontal,
-		SlideItem,
-		BaseMask,
-		Loading,
-		'dy-button': BaseButton,
-	},
 	directives: {
 		longpress: {
 			beforeMount: function (el, binding, vNode) {

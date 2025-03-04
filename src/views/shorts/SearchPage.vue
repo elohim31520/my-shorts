@@ -326,6 +326,10 @@
 	} from '@/common/utils'
 	import { useNav } from '@/common/utils/hooks/useNav'
 
+
+	import SlideItem from '@/common/components/slide/SlideItem.vue'
+	import SlideHorizontal from '@/common/components/slide/SlideHorizontal.vue'
+
 	defineOptions({
 		name: 'SearchPage',
 	})

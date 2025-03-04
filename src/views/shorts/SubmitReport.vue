@@ -61,6 +61,8 @@
 	import { onMounted, reactive } from 'vue'
 	import { _hideLoading, _no, _showLoading, _sleep } from '@/common/utils'
 
+	import BaseHeader from '@/common/components/BaseHeader.vue'
+
 	defineOptions({
 		name: 'SubmitReport',
 	})
