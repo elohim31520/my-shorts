@@ -12,10 +12,7 @@
 	>
 		<template v-slot:header>
 			<div class="title">
-				<SvgIcon
-					name="icon_Input_box_cancel"
-					size="1.875rem"
-				/>
+				<SvgIcon name="icon_Input_box_cancel" size="1.875rem" />
 				<div class="num">{{ _formatNumber(comments.length) }}条评论</div>
 				<div class="right">
 					<Icon
@@ -30,7 +27,6 @@
 			<div class="wrapper" v-if="comments.length">
 				<div class="items">
 					<div class="item" :key="i" v-for="(item, i) in comments">
-						<!--            v-longpress="(e) => showOptions(item)"-->
 						<div class="main">
 							<div class="content">
 								<img
@@ -239,7 +235,8 @@
 		sampleSize,
 	} from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
-	import { videoComments } from '@/api/videos'
+	import { videoCommentsApi } from '@/api/videos'
+	import { getListYear } from '@/api/statistic'
 
 	export default {
 		name: 'Comment',
@@ -351,13 +348,12 @@
 				this.resetSelectStatus()
 			},
 			async getData() {
-				let res: any = await videoComments({ id: this.videoId })
+				let res: any = await videoCommentsApi({ id: this.videoId })
 				if (res.success) {
-					res.data.map((v) => {
-						v.showChildren = false
-						v.digg_count = Number(v.digg_count)
+					const list = _get(res, 'data.list', []).map((vo) => {
+						return { ...vo, showChildren: false, digg_count: +vo.digg_count }
 					})
-					this.comments = res.data
+					this.comments = [...list]
 				}
 			},
 			cancel() {

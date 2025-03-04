@@ -14,8 +14,8 @@ export function historyVideo(params?: any, data?: any) {
 }
 
 export async function recommendedVideo(params = {}) {
-	console.log('切頁：',params.page);
-	
+	console.log('切頁：', params.page)
+
 	const { page = 1, size = 10 } = params
 
 	try {
@@ -76,11 +76,28 @@ export function likeVideo(params?: any, data?: any) {
 	return Promise.resolve({ url: '/video/like', method: 'get', params, data })
 }
 
-export function videoComments(params?: any, data?: any) {
-	return Promise.resolve({
-		url: '/video/comments',
-		method: 'get',
-		params,
-		data,
-	})
+export async function videoCommentsApi(params?: any) {
+	const { id } = params
+	console.log('評論id', id)
+
+	try {
+		const response = await axios.get(`/data/comments/video_id_${id}.json`)
+		const comments = response.data
+
+		return Promise.resolve({
+			success: true,
+			code: 200,
+			data: {
+				list: comments,
+				total: comments.length,
+			},
+		})
+	} catch (error) {
+		console.error('Failed to fetch data:', error)
+		return Promise.reject({
+			success: false,
+			code: 500,
+			message: 'Failed to fetch comments',
+		})
+	}
 }
