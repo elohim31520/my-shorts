@@ -15,21 +15,21 @@
 						:class="{ active: index === 0 }"
 						@click.stop="change(0)"
 					>
-						<span>热点</span>
+						<span>关注</span>
 					</div>
 					<div
 						class="tab"
 						:class="{ active: index === 1 }"
 						@click.stop="change(1)"
 					>
-						<span>长视频</span>
+						<span>图纸</span>
 					</div>
 					<div
 						class="tab"
 						:class="{ active: index === 2 }"
 						@click.stop="change(2)"
 					>
-						<span>关注</span>
+						<span>图纸</span>
 						<img src="/shorts/img/icon/live.webp" class="tab2-img" />
 					</div>
 					<div
@@ -37,7 +37,7 @@
 						:class="{ active: index === 3 }"
 						@click.stop="change(3)"
 					>
-						<span>经验</span>
+						<span>直播</span>
 					</div>
 					<div
 						class="tab"
@@ -49,11 +49,11 @@
 				</div>
 				<div class="indicator" ref="indicator"></div>
 			</div>
-			<Icon
-				v-hide="loading"
-				icon="ion:search"
-				class="search"
-				@click="$router.push('/home/search')"
+			<SvgIcon
+				class="color-white"
+				name="icon_button_Query"
+				size="1.875rem"
+				v-redirect="'/resourceSearch'"
 			/>
 		</div>
 		<Loading
@@ -311,7 +311,7 @@
 					height: 2.6px;
 					width: 26px;
 					//width: calc(100% / 5);
-					background: #fff;
+					background: #34C759;
 					border-radius: 5px;
 				}
 			}
