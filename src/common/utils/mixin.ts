@@ -1,6 +1,5 @@
 import BaseHeader from '../components/BaseHeader.vue'
 import SlideItem from '../components/slide/SlideItem.vue'
-import BaseFooter from '../components/BaseFooter.vue'
 import BaseMask from '../components/BaseMask.vue'
 import Loading from '../components/Loading.vue'
 import BaseButton from '../components/BaseButton.vue'
@@ -13,7 +12,6 @@ export default {
 		BaseHeader,
 		SlideHorizontal,
 		SlideItem,
-		BaseFooter,
 		BaseMask,
 		Loading,
 		'dy-button': BaseButton,
