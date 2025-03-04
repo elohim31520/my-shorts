@@ -20,8 +20,8 @@
 </template>
 
 <script setup lang="ts">
-	import { ref, watch } from 'vue'
-	import Dom, { _css } from '../../utils/dom'
+	import { ref, watch, useTemplateRef } from 'vue'
+	import Dom, { _css } from '@/common/utils/dom'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
 	import { _stopPropagation } from '@/common/utils'
 
@@ -38,11 +38,6 @@
 		tag?: string
 	}
 
-	interface Emits {
-		(ev: 'update:modelValue', val: boolean): void
-		(ev: 'cancel'): void
-	}
-
 	const props = withDefaults(defineProps<Props>(), {
 		modelValue: false,
 		mode: 'dark',
@@ -53,11 +48,11 @@
 		tag: '',
 	})
 
-	const emit = defineEmits<Emits>()
+	const emit = defineEmits(['update:modelValue', 'cancel'])
 
-	const dialog = ref<HTMLElement | null>(null)
+	const dialog = useTemplateRef('dialog')
 
-	const wrapper = ref<HTMLElement | null>(null)
+	const wrapper = useTemplateRef('wrapper')
 
 	const scroll = ref(0)
 
