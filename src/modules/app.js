@@ -11,7 +11,6 @@ import historyPlugin from './history'
 import globalPlugin from './global'
 import { once } from 'lodash-es'
 import { getUserInfo } from '@/api/user'
-import mixin from '@/common/utils/mixin'
 import {
 	getUser,
 	dialog,
@@ -31,7 +30,6 @@ export default (app) => {
 	app.component('SwiperSlide', SwiperSlide)
 	app.component('SvgIcon', SvgIcon)
 	app.use(Lazyload)
-	app.mixin(mixin)
 	loadDirectives(app)
 	if (!import.meta.env.SSR) onlyOnce(app)
 }
