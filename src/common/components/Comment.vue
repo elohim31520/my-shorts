@@ -12,7 +12,10 @@
 	>
 		<template v-slot:header>
 			<div class="title">
-				<dy-back mode="dark" img="close" direction="right" style="opacity: 0" />
+				<SvgIcon
+					name="icon_Input_box_cancel"
+					size="1.875rem"
+				/>
 				<div class="num">{{ _formatNumber(comments.length) }}条评论</div>
 				<div class="right">
 					<Icon

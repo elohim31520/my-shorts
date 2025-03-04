@@ -4,7 +4,6 @@ import Indicator from '../components/slide/Indicator.vue'
 import BaseFooter from '../components/BaseFooter.vue'
 import BaseMask from '../components/BaseMask.vue'
 import NoMore from '../components/NoMore.vue'
-import Back from '../components/Back.vue'
 import Loading from '../components/Loading.vue'
 import BaseButton from '../components/BaseButton.vue'
 import Dom from './dom'
@@ -20,7 +19,6 @@ export default {
 		BaseFooter,
 		BaseMask,
 		NoMore,
-		'dy-back': Back,
 		Loading,
 		'dy-button': BaseButton,
 	},
