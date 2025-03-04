@@ -127,15 +127,6 @@ export function userCollect(params?: any, data?: any) {
 	return Promise.resolve({ url: '/user/collect', method: 'get', params, data })
 }
 
-export function recommendedPostApi(params?: any, data?: any) {
-	return Promise.resolve({
-		url: '/post/recommended',
-		method: 'get',
-		params,
-		data,
-	})
-}
-
 export function recommendedShop(params?: any, data?: any) {
 	return Promise.resolve({
 		url: '/shop/recommended',

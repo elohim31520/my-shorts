@@ -1,55 +1,17 @@
 <template>
 	<div id="Community" @dragstart="(e) => _stopPropagation(e)">
-		<ScrollList class="Scroll" v-if="state.show" :api="recommendedPostApi">
-			<template v-slot="{ list }">
-				<div class="search" @click="nav('/home/search')">
-					<div class="left">
-						<SvgIcon
-							class="color-white"
-							name="icon_button_Query"
-							size="2rem"
-							@click.stop="_no"
-						/>
-						<span>壁纸</span>
-					</div>
-					<div class="right">搜索</div>
-				</div>
-				<WaterfallList :list="list" class="list">
-					<template v-slot="{ item }">
-						<div class="card" @click="(e) => showDetail(e, item)">
-							<img
-								class="poster"
-								v-lazy="_checkImgUrl(item.note_card?.cover?.url_default)"
-							/>
-							<div class="bottom">
-								<div class="title">
-									{{ item.note_card?.display_title }}
-								</div>
-								<div class="b2">
-									<div class="user">
-										<img
-											class="avatar"
-											:src="_checkImgUrl(item.note_card?.user?.avatar)"
-										/>
-										<div class="name">{{ item.note_card?.user?.nickname }}</div>
-									</div>
-									<div class="star">
-										<SvgIcon
-											class="color-white"
-											name="like_click1"
-											size="2rem"
-										/>
-										<div class="num">
-											{{ item.note_card?.interact_info?.liked_count }}
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</template>
-				</WaterfallList>
-			</template>
-		</ScrollList>
+		<div class="search" @click="nav('/home/search')">
+			<div class="left">
+				<SvgIcon
+					class="color-white"
+					name="icon_button_Query"
+					size="2rem"
+					@click.stop="_no"
+				/>
+				<span>壁纸</span>
+			</div>
+			<div class="right">搜索</div>
+		</div>
 
 		<teleport to="body">
 			<div class="shadow">
@@ -63,15 +25,11 @@
 <script setup>
 	import { reactive, ref, watch } from 'vue'
 	import {
-		_checkImgUrl,
 		_no,
 		_stopPropagation,
 		cloneDeep,
 	} from '@/common/utils'
-	import { recommendedPostApi } from '@/api/videos'
 	import { useNav } from '@/common/utils/hooks/useNav'
-	import WaterfallList from '@/common/components/WaterfallList.vue'
-	import ScrollList from '@/common/components/ScrollList.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	// import AlbumDetail from '@/views/other/AlbumDetail.vue'
 	import { _css } from '@/common/utils/dom'
