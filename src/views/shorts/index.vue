@@ -5,7 +5,7 @@
 				<div class="header">
 					<div class="left">下午好</div>
 					<div class="right" @click="nav('/home/live')">
-						<Icon icon="iconamoon:scanner" />
+						<SvgIcon name="qrcode" size="2.2rem" />
 						<span>扫一扫</span>
 					</div>
 				</div>
@@ -14,24 +14,20 @@
 						<div class="left">常用小程序</div>
 						<div class="right">
 							<span>全部</span>
-							<Icon icon="icon-park-outline:right" />
+							<SvgIcon name="arrow_right" size="2.2rem" />
 						</div>
 					</div>
 					<div class="content">
 						<div class="item" @click="_no">
-							<img
-								class="xcx"
-								src="https://lf3-static.bytednsdoc.com/obj/eden-cn/pipieh7nupabozups/toutiao_web_pc/tt-icon.png"
-								alt=""
+							<SvgIcon
+								name="icon_forum_collect_hot"
+								size="3.2rem"
+								class="color-white"
 							/>
 							<span>今日头条</span>
 						</div>
 						<div class="item" @click="_no">
-							<img
-								class="xcx"
-								src="https://gd-hbimg.huaban.com/65130a3e6a139530bb03bd118e21a2603af7df4e1303b-OOzcBu_fw658webp"
-								alt=""
-							/>
+							<SvgIcon name="wechat" size="3.2rem" class="color-white" />
 							<span>西瓜视频</span>
 						</div>
 					</div>
@@ -42,13 +38,15 @@
 						<div class="left">最近常看</div>
 						<div class="right">
 							<span>全部</span>
-							<Icon icon="icon-park-outline:right" />
+							<SvgIcon name="arrow_right" size="2.2rem" />
 						</div>
 					</div>
 					<div class="content">
 						<div class="item avatar" @click="_no" :key="i" v-for="i in 6">
-							<img
-								src="https://img.tol.vip/avatar/WEIXIN/3aSuTGYTzjHvcHy0y0tH1eiShKRk9Sgd.jpg?_upt=de4a5c251709635127"
+							<SvgIcon
+								name="icon_forum_collect_selected"
+								size="2.2rem"
+								class="color-white"
 							/>
 							<span>随机名字</span>
 						</div>
@@ -62,35 +60,35 @@
 					</div>
 					<div class="content">
 						<div class="item" @click="_no">
-							<Icon icon="ion:wallet-outline" />
+							<SvgIcon name="channel_money" size="2.2rem" />
 							<span>我的钱包</span>
 						</div>
 						<div class="item" @click="_no">
-							<Icon icon="mingcute:coupon-line" />
+							<SvgIcon name="channel_sold" size="2.2rem" />
 							<span>券包</span>
 						</div>
 						<div class="item" @click="_no">
-							<Icon icon="icon-park-outline:bytedance-applets" />
+							<SvgIcon name="watsapp" size="2.2rem" />
 							<span>小程序</span>
 						</div>
 						<div class="item" @click="_no">
-							<Icon icon="solar:history-linear" />
+							<SvgIcon name="button_statistics" size="2.2rem" />
 							<span>观看历史</span>
 						</div>
 						<div class="item" @click="_no">
-							<Icon icon="fluent:content-settings-24-regular" />
+							<SvgIcon name="icon_love" size="2.2rem" />
 							<span>内容偏好</span>
 						</div>
 						<div class="item" @click="_no">
-							<Icon icon="iconoir:cloud-download" />
+							<SvgIcon name="side-bar-record" size="2.2rem" />
 							<span>离线模式</span>
 						</div>
 						<div class="item" @click="_no">
-							<Icon icon="ep:setting" />
+							<SvgIcon name="channel_gear" size="2.2rem" />
 							<span>设置</span>
 						</div>
 						<div class="item" @click="_no">
-							<Icon icon="icon-park-outline:baggage-delay" />
+							<SvgIcon name="channel_phone" size="2.2rem" />
 							<span>稍后再看</span>
 						</div>
 					</div>
@@ -112,11 +110,7 @@
 				>
 					<!--          <SlideItem></SlideItem>-->
 					<Slide0 :active="state.navIndex === 0 && state.baseIndex === 1" />
-					<SlideItem>
-						<LongVideo
-							:active="state.navIndex === 1 && state.baseIndex === 1"
-						/>
-					</SlideItem>
+					<SlideItem></SlideItem>
 					<Slide2 :active="state.navIndex === 2 && state.baseIndex === 1" />
 					<SlideItem>
 						<Community
@@ -192,10 +186,11 @@
 
 		<BaseMask v-if="!isMobile" @click="isMobile = true" />
 		<div v-if="!isMobile" class="guide">
-			<Icon class="danger" icon="mynaui:danger-triangle" />
-			<Icon
+			<SvgIcon name="icon_Recharge_fail" size="2.2rem" />
+			<SvgIcon
+				name="icon_Recharge_fail"
+				size="2.2rem"
 				class="close"
-				icon="simple-line-icons:close"
 				@click="isMobile = true"
 			/>
 			<div class="txt">
@@ -213,6 +208,7 @@
 	import Comment from '@/common/components/Comment.vue'
 	import Share from '@/common/components/Share.vue'
 	import IndicatorHome from './components/IndicatorHome.vue'
+	import SvgIcon from '@/components/SvgIcon/index.vue'
 	import {
 		onActivated,
 		onDeactivated,
