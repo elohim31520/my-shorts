@@ -157,7 +157,6 @@
 						</div>
 					</div>
 				</div>
-				<no-more />
 			</div>
 			<Loading v-else style="position: absolute" />
 			<transition name="fade">
