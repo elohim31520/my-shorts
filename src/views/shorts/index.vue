@@ -110,12 +110,12 @@
 				>
 					<Slide0 :active="state.navIndex === 0 && state.baseIndex === 1" />
 					<SlideItem></SlideItem>
-					<Live :active="state.navIndex === 2 && state.baseIndex === 1" />
 					<SlideItem>
 						<Community
-							:active="state.navIndex === 3 && state.baseIndex === 1"
+							:active="state.navIndex === 2 && state.baseIndex === 1"
 						/>
 					</SlideItem>
+					<Live :active="state.navIndex === 3 && state.baseIndex === 1" />
 					<Slide4 :active="state.navIndex === 4 && state.baseIndex === 1" />
 				</SlideHorizontal>
 
