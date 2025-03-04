@@ -1,6 +1,5 @@
 import BaseHeader from '../components/BaseHeader.vue'
 import SlideItem from '../components/slide/SlideItem.vue'
-import Indicator from '../components/slide/Indicator.vue'
 import BaseFooter from '../components/BaseFooter.vue'
 import BaseMask from '../components/BaseMask.vue'
 import Loading from '../components/Loading.vue'
@@ -14,7 +13,6 @@ export default {
 		BaseHeader,
 		SlideHorizontal,
 		SlideItem,
-		Indicator,
 		BaseFooter,
 		BaseMask,
 		Loading,
