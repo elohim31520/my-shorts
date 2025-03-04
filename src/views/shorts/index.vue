@@ -4,7 +4,7 @@
 			<SlideItem class="sidebar">
 				<div class="header">
 					<div class="left">下午好</div>
-					<div class="right" @click="nav('/home/live')">
+					<div class="right" @click="redirect('/home/live')">
 						<SvgIcon name="qrcode" size="2.2rem" />
 						<span>扫一扫</span>
 					</div>
@@ -199,7 +199,7 @@
 			</div>
 		</div>
 
-		<Footer :active="1"/>
+		<Footer :active="1" />
 	</div>
 </template>
 
@@ -220,7 +220,6 @@
 		onBeforeMount,
 	} from 'vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
-	import { useNav } from '@/common/utils/hooks/useNav'
 	import PlayFeedback from '@/views/shorts/components/PlayFeedback.vue'
 	import ShareTo from '@/views/shorts/components/ShareTo.vue'
 	import DouyinCode from '@/common/components/DouyinCode.vue'
@@ -240,8 +239,8 @@
 	import { useBaseStore } from '@/stores/shorts'
 	import BaseMask from '@/common/components/BaseMask.vue'
 	import Footer from './Footer.vue'
+	import { redirect } from '@/modules/util'
 
-	const nav = useNav()
 	const baseStore = useBaseStore()
 	const uploader = ref()
 	const isMobile = ref(/Mobi|Android|iPhone/i.test(navigator.userAgent))
@@ -338,7 +337,7 @@
 		})
 		bus.on(EVENT_KEY.NAV, ({ path, query }) => {
 			if (!state.active) return
-			nav(path, query)
+			redirect(path, query)
 		})
 		bus.on(EVENT_KEY.GO_USERINFO, () => {
 			if (!state.active) return

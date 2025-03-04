@@ -1,6 +1,6 @@
 <template>
 	<div id="Community" @dragstart="(e) => _stopPropagation(e)">
-		<div class="search" @click="nav('/home/search')">
+		<div class="search" @click="redirect('/resourceSearch')">
 			<div class="left">
 				<SvgIcon
 					class="color-white"
@@ -24,21 +24,17 @@
 
 <script setup>
 	import { reactive, ref, watch } from 'vue'
-	import {
-		_no,
-		_stopPropagation,
-		cloneDeep,
-	} from '@/common/utils'
-	import { useNav } from '@/common/utils/hooks/useNav'
+
+	import { _no, _stopPropagation, cloneDeep } from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
 	// import AlbumDetail from '@/views/other/AlbumDetail.vue'
 	import { _css } from '@/common/utils/dom'
+	import { redirect } from '@/modules/util'
 
 	const Mock = {
 		mock: () => '',
 	}
 
-	const nav = useNav()
 	const baseStore = useBaseStore()
 	const props = defineProps({
 		active: {
