@@ -6,7 +6,7 @@
 		_formatNumber,
 		_stopPropagation,
 	} from '@/common/utils'
-	import { recommendedLongVideo } from '@/api/videos'
+	import { recommendedLongVideo } from '@/api/shorts'
 	import ScrollList from '@/common/components/ScrollList.vue'
 	import { useNav } from '@/common/utils/hooks/useNav'
 

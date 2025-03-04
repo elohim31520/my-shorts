@@ -304,7 +304,7 @@
 	import { DefaultUser } from '@/constants/shorts'
 	import Loading from '@/common/components/Loading.vue'
 	import { useBaseStore } from '@/stores/shorts'
-	import { userVideoList } from '@/api/videos'
+	import { userVideoList } from '@/api/shorts'
 
 	const $nav = useNav()
 	const baseStore = useBaseStore()

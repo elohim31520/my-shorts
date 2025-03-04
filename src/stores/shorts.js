@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { friends, panel } from '@/api/videos'
+import { friends, panel } from '@/api/shorts'
 import DISPLAY_TYPE from '@/constants/shorts'
 import resource from '@/mock/resource'
 

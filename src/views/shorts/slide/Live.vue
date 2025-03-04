@@ -44,7 +44,7 @@
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
 	import { _checkImgUrl, _stop, _stopPropagation } from '@/common/utils'
 	import SlideList from './SlideList.vue'
-	import { recommendedVideo } from '@/api/videos'
+	import { recommendedVideo } from '@/api/shorts'
 	import { useBaseStore } from '@/stores/shorts'
 
 	const store = useBaseStore()

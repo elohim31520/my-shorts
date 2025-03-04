@@ -235,7 +235,7 @@
 		sampleSize,
 	} from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
-	import { videoCommentsApi } from '@/api/videos'
+	import { videoCommentsApi } from '@/api/shorts'
 	import { getListYear } from '@/api/statistic'
 
 	export default {

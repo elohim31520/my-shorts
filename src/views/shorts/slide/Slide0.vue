@@ -68,7 +68,7 @@
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
 	import { _stopPropagation } from '@/common/utils'
 	import SlideList from './SlideList.vue'
-	import { recommendedVideo } from '@/api/videos'
+	import { recommendedVideo } from '@/api/shorts'
 
 	const props = defineProps({
 		cbs: {
