@@ -198,6 +198,8 @@
 				<h3>2. 按 Ctrl+Shift+M，或点击下面图标</h3>
 			</div>
 		</div>
+
+		<Footer :active="1"/>
 	</div>
 </template>
 
@@ -237,6 +239,7 @@
 	// import LongVideo from '@/views/shorts/slide/LongVideo.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import BaseMask from '@/common/components/BaseMask.vue'
+	import Footer from './Footer.vue'
 
 	const nav = useNav()
 	const baseStore = useBaseStore()
