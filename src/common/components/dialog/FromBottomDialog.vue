@@ -44,7 +44,7 @@
 		maskMode: 'dark',
 		height: 'calc(var(--vh, 1vh) * 70)',
 		showHengGang: true,
-		borderRadius: '15rem 15rem 0 0',
+		borderRadius: '15px 15px 0 0',
 		tag: '',
 	})
 
@@ -156,11 +156,11 @@
 		z-index: 9;
 		position: fixed;
 		width: 100%;
-		padding-top: 24rem;
+		padding-top: 24px;
 		bottom: 0;
 		left: 0;
 		box-sizing: border-box;
-		border-radius: 15rem 15rem 0 0;
+		border-radius: 15px 15px 0 0;
 		transform: translate3d(0, 0, 0);
 		overflow: hidden;
 		display: flex;
@@ -185,13 +185,13 @@
 		}
 
 		.heng-gang {
-			border-radius: 15rem 15rem 0 0;
+			border-radius: 15px 15px 0 0;
 			z-index: 3;
 			width: 100%;
 			position: fixed;
-			height: 30rem;
+			height: 30px;
 			display: flex;
-			transform: translateY(-24rem);
+			transform: translateY(-24px);
 			justify-content: center;
 			align-items: center;
 			touch-action: pan-y;
@@ -222,8 +222,8 @@
 
 			.content {
 				border-radius: 2px;
-				height: 4rem;
-				width: 30rem;
+				height: 4px;
+				width: 30px;
 			}
 		}
 
