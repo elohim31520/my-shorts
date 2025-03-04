@@ -6,7 +6,9 @@
 		@pulldown="loadData"
 	>
 		<slot :list="state.list"></slot>
-		<NoMore v-if="state.total !== 0 && state.total === state.list.length" />
+		<div v-if="state.total !== 0 && state.total === state.list.length">
+			暂时没有更多了
+		</div>
 	</Scroll>
 </template>
 
@@ -14,7 +16,6 @@
 	import { onMounted, reactive } from 'vue'
 	import { toast } from '@/modules/util'
 	import Scroll from '@/common/components/Scroll.vue'
-	import NoMore from '@/common/components/NoMore.vue'
 	import { useScroll } from '@/common/utils/hooks/useScroll.ts'
 
 	const props = defineProps({
