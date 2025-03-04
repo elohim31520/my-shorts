@@ -24,8 +24,7 @@
 			/>
 			<p>您的浏览器不支持 video 标签。</p>
 		</video>
-		<!-- <Icon v-if="!isPlaying" icon="fluent:play-28-filled" class="pause-icon"  /> -->
-		<SvgIcon v-if="!isPlaying" class="pause-icon" size="1.375rem" name="play" />
+		<SvgIcon v-if="!isPlaying" class="pause-icon" size="3.2rem" name="play" />
 		<div class="float">
 			<template v-if="isLive">
 				<div class="living">点击进入直播间</div>
@@ -101,6 +100,7 @@
 	import ItemDesc from './ItemDesc.vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
 	import { SlideItemPlayStatus } from '@/constants/shorts'
+	import SvgIcon from '@/components/SvgIcon/index.vue'
 	import {
 		ref,
 		computed,
