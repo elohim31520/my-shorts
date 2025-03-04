@@ -227,7 +227,7 @@
 	import ConfirmDialog from '@/common/components/dialog/ConfirmDialog.vue'
 	import FollowSetting2 from '@/views/shorts/components/FollowSetting2.vue'
 	import ShareToFriend from '@/views/shorts/components/ShareToFriend.vue'
-	import UserPanel from '@/common/components/UserPanel.vue'
+	// import UserPanel from '@/common/components/UserPanel.vue'
 	import Community from '@/views/shorts/slide/Community.vue'
 	import Slide0 from '@/views/shorts/slide/Slide0.vue'
 	import Live from '@/views/shorts/slide/Live.vue'
@@ -339,7 +339,7 @@
 		})
 		bus.on(EVENT_KEY.GO_USERINFO, () => {
 			if (!state.active) return
-			state.baseIndex = 2
+			// state.baseIndex = 2
 		})
 		bus.on(EVENT_KEY.CURRENT_ITEM, setCurrentItem)
 	})

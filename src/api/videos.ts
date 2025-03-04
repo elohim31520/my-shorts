@@ -23,11 +23,7 @@ export async function recommendedVideo(params = {}) {
 		const videos = response.data
 
 		const updatedVideos = videos.map((vo) => {
-			const videoItem = { ...vo, type: 'recommend-video' }
-			const author = '我是作者'
-			if (author) {
-				videoItem.author = author
-			}
+			const videoItem = { author: {}, ...vo, type: 'recommend-video' }
 			return videoItem
 		})
 

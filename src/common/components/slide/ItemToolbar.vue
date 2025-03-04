@@ -1,3 +1,68 @@
+<template>
+	<div class="toolbar mb1r">
+		<div class="avatar-ctn mb2r">
+			<img
+				class="avatar"
+				:src="item.author?.avatar_168x168?.url_list?.[0]"
+				alt=""
+				v-click="() => bus.emit(EVENT_KEY.GO_USERINFO)"
+			/>
+			<transition name="fade">
+				<div v-if="!item.isAttention" v-click="attention" class="options">
+					<img class="no" src="/shorts/img/icon/add-light.png" alt="" />
+					<img class="yes" src="/shorts/img/icon/ok-red.png" alt="" />
+				</div>
+			</transition>
+		</div>
+		<div class="love mb2r" v-click="loved">
+			<div>
+				<SvgIcon
+					size="2.375rem"
+					class="color-white"
+					:name="item.isLoved === 'y' ? 'like_click3' : 'like_fill'"
+				/>
+			</div>
+			<span>{{ _formatNumber(item.statistics.digg_count) }}</span>
+		</div>
+		<div class="message mb2r" v-click="showComments">
+			<SvgIcon size="2.375rem" class="color-white" name="message-10" />
+
+			<span>{{ _formatNumber(item.statistics.comment_count) }}</span>
+		</div>
+		<!--TODO     -->
+		<div class="message mb2r" v-click="collected">
+			<SvgIcon
+				v-if="item.isCollect"
+				size="2.375rem"
+				class="color-white"
+				name="icon_Star"
+			/>
+			<SvgIcon v-else size="2.375rem" class="color-white" name="star" />
+			<span>{{ _formatNumber(item.statistics.collect_count) }}</span>
+		</div>
+		<div
+			v-if="!props.isMy"
+			class="share mb2r"
+			v-click="() => bus.emit(EVENT_KEY.SHOW_SHARE)"
+		>
+			<img
+				src="/shorts/img/icon/share-white-full.png"
+				alt=""
+				class="share-image"
+			/>
+			<span>{{ _formatNumber(item.statistics.share_count) }}</span>
+		</div>
+		<div
+			v-else
+			class="share mb2r"
+			v-click="() => bus.emit(EVENT_KEY.SHOW_SHARE)"
+		>
+			<img src="/shorts/img/icon/menu-white.png" alt="" class="share-image" />
+		</div>
+		<BaseMusic :cover="item.music.cover" />
+	</div>
+</template>
+
 <script setup lang="ts">
 	import BaseMusic from '../BaseMusic.vue'
 	import { _formatNumber, cloneDeep } from '@/common/utils'
@@ -77,71 +142,6 @@
 
 	const vClick = useClick()
 </script>
-
-<template>
-	<div class="toolbar mb1r">
-		<div class="avatar-ctn mb2r">
-			<img
-				class="avatar"
-				:src="item.author?.avatar_168x168?.url_list?.[0]"
-				alt=""
-				v-click="() => bus.emit(EVENT_KEY.GO_USERINFO)"
-			/>
-			<transition name="fade">
-				<div v-if="!item.isAttention" v-click="attention" class="options">
-					<img class="no" src="/shorts/img/icon/add-light.png" alt="" />
-					<img class="yes" src="/shorts/img/icon/ok-red.png" alt="" />
-				</div>
-			</transition>
-		</div>
-		<div class="love mb2r" v-click="loved">
-			<div>
-				<SvgIcon
-					size="2.375rem"
-					class="color-white"
-					:name="item.isLoved === 'y' ? 'like_click3' : 'like_fill'"
-				/>
-			</div>
-			<span>{{ _formatNumber(item.statistics.digg_count) }}</span>
-		</div>
-		<div class="message mb2r" v-click="showComments">
-			<SvgIcon size="2.375rem" class="color-white" name="message-10" />
-
-			<span>{{ _formatNumber(item.statistics.comment_count) }}</span>
-		</div>
-		<!--TODO     -->
-		<div class="message mb2r" v-click="collected">
-			<SvgIcon
-				v-if="item.isCollect"
-				size="2.375rem"
-				class="color-white"
-				name="icon_Star"
-			/>
-			<SvgIcon v-else size="2.375rem" class="color-white" name="star" />
-			<span>{{ _formatNumber(item.statistics.collect_count) }}</span>
-		</div>
-		<div
-			v-if="!props.isMy"
-			class="share mb2r"
-			v-click="() => bus.emit(EVENT_KEY.SHOW_SHARE)"
-		>
-			<img
-				src="/shorts/img/icon/share-white-full.png"
-				alt=""
-				class="share-image"
-			/>
-			<span>{{ _formatNumber(item.statistics.share_count) }}</span>
-		</div>
-		<div
-			v-else
-			class="share mb2r"
-			v-click="() => bus.emit(EVENT_KEY.SHOW_SHARE)"
-		>
-			<img src="/shorts/img/icon/menu-white.png" alt="" class="share-image" />
-		</div>
-		<BaseMusic :cover="item.music.cover" />
-	</div>
-</template>
 
 <style scoped lang="scss">
 	.toolbar {
