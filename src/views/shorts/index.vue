@@ -110,7 +110,7 @@
 				>
 					<Slide0 :active="state.navIndex === 0 && state.baseIndex === 1" />
 					<SlideItem></SlideItem>
-					<Slide2 :active="state.navIndex === 2 && state.baseIndex === 1" />
+					<Live :active="state.navIndex === 2 && state.baseIndex === 1" />
 					<SlideItem>
 						<Community
 							:active="state.navIndex === 3 && state.baseIndex === 1"
@@ -230,7 +230,7 @@
 	import UserPanel from '@/common/components/UserPanel.vue'
 	import Community from '@/views/shorts/slide/Community.vue'
 	import Slide0 from '@/views/shorts/slide/Slide0.vue'
-	import Slide2 from '@/views/shorts/slide/Slide2.vue'
+	import Live from '@/views/shorts/slide/Live.vue'
 	import Slide4 from '@/views/shorts/slide/Slide4.vue'
 	import { DefaultUser } from '@/constants/shorts'
 	import { _no } from '@/common/utils'

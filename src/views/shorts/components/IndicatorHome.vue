@@ -29,7 +29,6 @@
 						@click.stop="change(2)"
 					>
 						<span>图纸</span>
-						<img src="/shorts/img/icon/live.webp" class="tab2-img" />
 					</div>
 					<div
 						class="tab"
@@ -37,6 +36,7 @@
 						@click.stop="change(3)"
 					>
 						<span>直播</span>
+						<img src="/shorts/img/icon/live.webp" class="tab2-img" />
 					</div>
 					<div
 						class="tab"
