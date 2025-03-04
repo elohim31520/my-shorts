@@ -108,7 +108,7 @@
 					:change-active-index-use-anim="false"
 					v-model:index="state.navIndex"
 				>
-					<Slide0 :active="state.navIndex === 0 && state.baseIndex === 1" />
+					<MyFollow :active="state.navIndex === 0 && state.baseIndex === 1" />
 
 					<SlideItem>
 						<Community
@@ -230,7 +230,7 @@
 	import ShareToFriend from '@/views/shorts/components/ShareToFriend.vue'
 	// import UserPanel from '@/common/components/UserPanel.vue'
 	import Community from '@/views/shorts/slide/Community.vue'
-	import Slide0 from '@/views/shorts/slide/Slide0.vue'
+	import MyFollow from '@/views/shorts/slide/MyFollow.vue'
 	import Live from '@/views/shorts/slide/Live.vue'
 	import Slide4 from '@/views/shorts/slide/Slide4.vue'
 	import { DefaultUser } from '@/constants/shorts'

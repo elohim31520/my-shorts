@@ -8,35 +8,35 @@
 			<div class="local">
 				<div class="card" @touchmove.capture="stop">
 					<div class="nav-item">
-						<!-- <img src="@/assets/img/icon/msg-icon9.webp" alt="" /> -->
+						<SvgIcon name="icon_credit_card" size="2.2rem" />
 						<span>美食</span>
 					</div>
 					<div class="nav-item">
-						<!-- <img src="@/assets/img/icon/msg-icon9.webp" alt="" /> -->
+						<SvgIcon name="icon_credit_card" size="2.2rem" />
 						<span>休闲娱乐</span>
 					</div>
 					<div class="nav-item">
-						<!-- <img src="@/assets/img/icon/msg-icon9.webp" alt="" /> -->
+						<SvgIcon name="icon_credit_card" size="2.2rem" />
 						<span>游玩</span>
 					</div>
 					<div class="nav-item">
-						<!-- <img src="@/assets/img/icon/msg-icon9.webp" alt="" /> -->
+						<SvgIcon name="icon_credit_card" size="2.2rem" />
 						<span>丽人/美发</span>
 					</div>
 					<div class="nav-item">
-						<!-- <img src="@/assets/img/icon/msg-icon9.webp" alt="" /> -->
+						<SvgIcon name="icon_credit_card" size="2.2rem" />
 						<span>住宿</span>
 					</div>
 					<div class="nav-item">
-						<!-- <img src="@/assets/img/icon/msg-icon9.webp" alt="" /> -->
+						<SvgIcon name="icon_credit_card" size="2.2rem" />
 						<span>游玩</span>
 					</div>
 					<div class="nav-item">
-						<!-- <img src="@/assets/img/icon/msg-icon9.webp" alt="" /> -->
+						<SvgIcon name="icon_credit_card" size="2.2rem" />
 						<span>丽人/美发</span>
 					</div>
 					<div class="nav-item">
-						<!-- <img src="@/assets/img/icon/msg-icon9.webp" alt="" /> -->
+						<SvgIcon name="icon_credit_card" size="2.2rem" />
 						<span>住宿</span>
 					</div>
 				</div>
