@@ -247,12 +247,12 @@
 <script setup>
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import { useBaseStore } from '@/stores/shorts'
+	import { toast } from '@/modules/util'
 	import {
 		_checkImgUrl,
 		_copy,
 		_hideLoading,
 		_no,
-		_notice,
 		_showLoading,
 		_sleep,
 	} from '@/common/utils'
@@ -309,7 +309,7 @@
 			props.item.share_info.share_link_desc + props.item.share_info.share_url
 		)
 		//TODO 抖音样式改了
-		_notice('复制成功')
+		toast('复制成功')
 	}
 
 	function toggleCall(item) {
@@ -324,7 +324,7 @@
 		emit('update:modelValue', false)
 	}
 	function shared() {
-		_notice('分享成功！')
+		toast('分享成功！')
 		store.message = ''
 		closeShare()
 	}

@@ -98,16 +98,6 @@
 		}
 	}
 
-	// function dislike() {
-	//   listRef.value.dislike(state.list[1])
-	//   state.list[state.index] = state.list[1]
-	//   _notice('操作成功，将减少此类视频的推荐')
-	// }
-
-	// function end() {
-	//   // _notice('暂时没有更多了')
-	// }
-
 	function click(uniqueId) {
 		if (!props.active) return
 		if (uniqueId !== props.uniqueId) return

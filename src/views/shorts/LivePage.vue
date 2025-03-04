@@ -137,7 +137,7 @@
 	import { nextTick } from 'vue'
 	import { mapState } from 'pinia'
 	import { useBaseStore } from '@/stores/shorts'
-	import { _checkImgUrl, _sleep, random } from '@/common/utils'
+	import { _checkImgUrl, _sleep } from '@/common/utils'
 
 	const Mock = {
 		mock: () => '',
@@ -192,7 +192,7 @@
 						'/images/rlkpmpGPdhYZRJl3J4Xl7.png',
 						'/images/Ge4mMWQoICdpyTyixk3Sf.png',
 					]
-					let avatar = avatarList[random(0, avatarList.length - 1)]
+					let avatar = avatarList[_random(0, avatarList.length - 1)]
 					let gift = '/images/icon/love.webp'
 					let name = Mock.mock('@cname')
 					let name2 = Mock.mock('@cname')

@@ -174,10 +174,10 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import { mapState } from 'pinia'
 	import { useBaseStore } from '@/stores/shorts'
+	import { toast } from '@/modules/util'
 	import {
 		_checkImgUrl,
 		_no,
-		_notice,
 		_storageGet,
 		_storageSet,
 		cloneDeep,
@@ -291,7 +291,7 @@
 			},
 			share(item) {
 				if (item.select) {
-					_notice('已分享给朋友')
+					toast('已分享给朋友')
 				}
 				item.select = true
 			},

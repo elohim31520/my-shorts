@@ -7,11 +7,8 @@ import NoMore from '../components/NoMore.vue'
 import Back from '../components/Back.vue'
 import Loading from '../components/Loading.vue'
 import BaseButton from '../components/BaseButton.vue'
-import CONST_VAR from '@/constants/shorts'
 import Dom from './dom'
 import bus, { EVENT_KEY } from './bus'
-import { random } from '@/common/utils'
-// import { Icon } from '@iconify/vue'
 import SlideHorizontal from '@/common/components/slide/SlideHorizontal.vue'
 
 export default {
@@ -26,12 +23,6 @@ export default {
 		'dy-back': Back,
 		Loading,
 		'dy-button': BaseButton,
-	},
-	data() {
-		return {
-			SUCCESS: 200,
-			RELATE_ENUM: CONST_VAR.RELATE_ENUM,
-		}
 	},
 	directives: {
 		longpress: {
@@ -117,7 +108,7 @@ export default {
 					// console.log('dbClick')
 					const id = 'a' + Date.now()
 					const elWidth = 80
-					const rotate = random(0, 1)
+					const rotate = _random(0, 1)
 					const template = `<img class="${rotate ? 'left love-dbclick' : 'right love-dbclick'}" id="${id}" src="${new URL('../assets/img/icon/loved.svg', import.meta.url).href}">`
 					const el = new Dom().create(template)
 					el.css({ top: e.y - elWidth - 40, left: e.x - elWidth / 2 })

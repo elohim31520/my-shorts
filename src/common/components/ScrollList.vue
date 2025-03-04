@@ -12,7 +12,7 @@
 
 <script setup>
 	import { onMounted, reactive } from 'vue'
-	import { _notice } from '@/common/utils'
+	import { toast } from '@/modules/util'
 	import Scroll from '@/common/components/Scroll.vue'
 	import NoMore from '@/common/components/NoMore.vue'
 	import { useScroll } from '@/common/utils/hooks/useScroll.ts'
@@ -62,7 +62,7 @@
 			}
 			state.total = res.data.total
 		} else {
-			_notice('查询失败')
+			toast('查询失败')
 		}
 	}
 

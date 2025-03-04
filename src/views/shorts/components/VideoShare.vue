@@ -97,12 +97,12 @@
 		_checkImgUrl,
 		_hideLoading,
 		_no,
-		_notice,
 		_showLoading,
 		_sleep,
 		_stopPropagation,
 	} from '@/common/utils'
 	// import DouyinCode from "./DouyinCode";
+	import { toast } from '@/modules/util'
 
 	export default {
 		name: 'Share',
@@ -172,7 +172,7 @@
 							if (this.itemType === 'download') {
 								_stopPropagation(e)
 							} else {
-								_notice('作者已关闭下载功能')
+								toast('作者已关闭下载功能')
 								this.$emit('copy')
 							}
 							return
@@ -180,7 +180,7 @@
 						if (this.needDown) _stopPropagation(e)
 						else return
 						if (this.progress === 100) {
-							_notice('未实现分享跳转到其他App')
+							toast('未实现分享跳转到其他App')
 						} else {
 							this.loading = true
 							let interval = setInterval(() => {
@@ -191,7 +191,7 @@
 									this.loading = false
 									this.$emit('click')
 									this.$emit('click')
-									_notice('未实现分享跳转到其他App')
+									toast('未实现分享跳转到其他App')
 								}
 							}, 10)
 						}
@@ -289,14 +289,14 @@
 				_showLoading()
 				await _sleep(500)
 				_hideLoading()
-				_notice('复制成功')
+				toast('复制成功')
 			},
 			toggleCollect() {
 				this.closeShare()
 				if (this.isCollect) {
-					_notice('取消收藏成功')
+					toast('取消收藏成功')
 				} else {
-					_notice('收藏成功')
+					toast('收藏成功')
 				}
 				this.isCollect = !this.isCollect
 			},
