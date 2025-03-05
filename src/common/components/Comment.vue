@@ -203,7 +203,7 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import Loading from '@/common/components/Loading.vue'
 	import Search from './Search.vue'
-	import { _checkImgUrl, _formatNumber, _no, sampleSize } from '@/common/utils'
+	import { _checkImgUrl, _formatNumber, _no } from '@/common/utils'
 	import { getTimeDifference } from '@/modules/date'
 	import { useBaseStore } from '@/stores/shorts'
 	import { videoCommentsApi } from '@/api/shorts'
@@ -275,6 +275,18 @@
 			_no,
 			_formatNumber,
 			_checkImgUrl,
+			sampleSize(arr, num) {
+				const list = []
+				const indexs = []
+				while (list.length !== num) {
+					const j = _random(0, arr.length - 1)
+					if (!indexs.includes(j)) {
+						list.push(arr[j])
+						indexs.push(j)
+					}
+				}
+				return list
+			},
 			// 评论发送成功后调用此方法
 			resetSelectStatus() {
 				this.friends.all.forEach((item) => {
@@ -287,9 +299,9 @@
 				_delay(() => {
 					this.loadChildren = false
 					if (item.showChildren) {
-						item.children = item.children.concat(sampleSize(this.comments, 10))
+						item.children = item.children.concat(this.sampleSize(this.comments, 10))
 					} else {
-						item.children = sampleSize(this.comments, 3)
+						item.children = this.sampleSize(this.comments, 3)
 						item.showChildren = true
 					}
 				}, 500)

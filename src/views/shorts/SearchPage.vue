@@ -322,10 +322,8 @@
 		_formatNumber,
 		_no,
 		_showSimpleConfirmDialog,
-		sampleSize,
 	} from '@/common/utils'
 	import { useNav } from '@/common/utils/hooks/useNav'
-
 
 	import SlideItem from '@/common/components/slide/SlideItem.vue'
 	import SlideHorizontal from '@/common/components/slide/SlideHorizontal.vue'
@@ -788,6 +786,19 @@
 		data.selectBrandKey = key
 		data.selectBrandKeyIndex = i
 		clearInterval(data.timer)
+	}
+
+	function sampleSize(arr, num) {
+		const list = []
+		const indexs = []
+		while (list.length !== num) {
+			const j = _random(0, arr.length - 1)
+			if (!indexs.includes(j)) {
+				list.push(arr[j])
+				indexs.push(j)
+			}
+		}
+		return list
 	}
 
 	function refresh() {

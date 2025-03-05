@@ -48,19 +48,6 @@ export function _getUserDouyinId(item) {
 	return item.author.unique_id || item.author.short_id
 }
 
-export function sampleSize(arr, num) {
-	const list = []
-	const indexs = []
-	while (list.length !== num) {
-		const j = _random(0, arr.length - 1)
-		if (!indexs.includes(j)) {
-			list.push(arr[j])
-			indexs.push(j)
-		}
-	}
-	return list
-}
-
 export function _showLoading() {
 	const app = createApp({
 		render() {
