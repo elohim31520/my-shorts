@@ -30,13 +30,13 @@
 		slideTouchEnd,
 		slideTouchMove,
 		slideTouchStart,
-	} from '@/common/utils/slide'
+	} from '@/modules/slide'
 	import { SlideType } from '@/constants/shorts'
 	import SlideItem from '@/common/components/slide/SlideItem.vue'
-	import bus, { EVENT_KEY } from '@/common/utils/bus'
+	import bus, { EVENT_KEY } from '@/modules/bus'
 	import Loading from '@/common/components/Loading.vue'
 	import { useBaseStore } from '@/stores/shorts'
-	import { _css } from '@/common/utils/dom'
+	import { _css } from '@/modules/dom'
 
 	const props = defineProps({
 		index: {

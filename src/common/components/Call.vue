@@ -84,7 +84,7 @@
 </template>
 <script setup>
 	import { onMounted, reactive, watch, computed } from 'vue'
-	import bus, { EVENT_KEY } from '@/common/utils/bus'
+	import bus, { EVENT_KEY } from '@/modules/bus'
 
 	defineOptions({
 		name: 'Call',

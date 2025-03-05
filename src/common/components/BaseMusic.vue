@@ -25,7 +25,7 @@
 </template>
 <script setup lang="ts">
 	import { inject, onMounted, computed, ref } from 'vue'
-	import bus, { EVENT_KEY } from '@/common/utils/bus'
+	import bus, { EVENT_KEY } from '@/modules/bus'
 	import { useClick } from '@/views/shorts/hooks/useClick'
 	import SvgIcon from '@/components/SvgIcon/index.vue'
 

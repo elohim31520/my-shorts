@@ -1,8 +1,8 @@
-import bus from '@/common/utils/bus'
+import bus from '@/modules/bus'
 import { _stopPropagation } from '@/common/utils/index'
 import { SlideType } from '@/constants/shorts'
 import { nextTick } from 'vue'
-import { _css } from '@/common/utils/dom'
+import { _css } from '@/modules/dom'
 
 function checkEvent(e) {
 	const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)

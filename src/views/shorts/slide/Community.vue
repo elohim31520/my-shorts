@@ -28,7 +28,7 @@
 	import { _no, _stopPropagation } from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
 	// import AlbumDetail from '@/views/other/AlbumDetail.vue'
-	import { _css } from '@/common/utils/dom'
+	import { _css } from '@/modules/dom'
 	import { redirect } from '@/modules/util'
 
 	const Mock = {

@@ -102,7 +102,7 @@
 	import Loading from '@/common/components/Loading.vue'
 	import ItemToolbar from './ItemToolbar.vue'
 	import ItemDesc from './ItemDesc.vue'
-	import bus, { EVENT_KEY } from '@/common/utils/bus'
+	import bus, { EVENT_KEY } from '@/modules/bus'
 	import { SlideItemPlayStatus } from '@/constants/shorts'
 	import SvgIcon from '@/components/SvgIcon/index.vue'
 	import {
@@ -114,7 +114,7 @@
 		reactive,
 		useTemplateRef,
 	} from 'vue'
-	import { _css } from '@/common/utils/dom'
+	import { _css } from '@/modules/dom'
 	import { format } from 'date-fns'
 
 	defineOptions({

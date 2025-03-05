@@ -21,8 +21,8 @@
 
 <script setup lang="ts">
 	import { ref, watch, useTemplateRef } from 'vue'
-	import Dom, { _css } from '@/common/utils/dom'
-	import bus, { EVENT_KEY } from '@/common/utils/bus'
+	import Dom, { _css } from '@/modules/dom'
+	import bus, { EVENT_KEY } from '@/modules/bus'
 	import { _stopPropagation } from '@/common/utils'
 
 	defineOptions({ name: 'FromBottomDialog' })

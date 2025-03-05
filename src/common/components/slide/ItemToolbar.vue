@@ -68,7 +68,7 @@
 <script setup lang="ts">
 	import BaseMusic from '../BaseMusic.vue'
 	import { _formatNumber } from '@/common/utils'
-	import bus, { EVENT_KEY } from '@/common/utils/bus'
+	import bus, { EVENT_KEY } from '@/modules/bus'
 	import { useClick } from '@/views/shorts/hooks/useClick'
 	import { inject } from 'vue'
 	import SvgIcon from '@/components/SvgIcon/index.vue'

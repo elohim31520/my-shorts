@@ -26,9 +26,9 @@
 </template>
 
 <script>
-	import bus from '@/common/utils/bus'
+	import bus from '@/modules/bus'
 	import { useBaseStore } from '@/stores/shorts'
-	import { _css } from '@/common/utils/dom'
+	import { _css } from '@/modules/dom'
 	import { _stopPropagation } from '@/common/utils'
 
 	export default {

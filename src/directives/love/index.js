@@ -1,5 +1,5 @@
-import Dom from '@/common/utils/dom'
-import bus, { EVENT_KEY } from '@/common/utils/bus'
+import Dom from '@/modules/dom'
+import bus, { EVENT_KEY } from '@/modules/bus'
 
 export default {
 	mounted: function (el, binding) {

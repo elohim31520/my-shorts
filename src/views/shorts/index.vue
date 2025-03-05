@@ -219,7 +219,7 @@
 		ref,
 		onBeforeMount,
 	} from 'vue'
-	import bus, { EVENT_KEY } from '@/common/utils/bus'
+	import bus, { EVENT_KEY } from '@/modules/bus'
 	import PlayFeedback from '@/views/shorts/components/PlayFeedback.vue'
 	import ShareTo from '@/views/shorts/components/ShareTo.vue'
 	import DouyinCode from '@/common/components/DouyinCode.vue'

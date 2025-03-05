@@ -1,7 +1,7 @@
 <script lang="jsx">
-	import bus from '@/common/utils/bus'
+	import bus from '@/modules/bus'
 	import { useBaseStore } from '@/stores/shorts'
-	import { _css } from '@/common/utils/dom'
+	import { _css } from '@/modules/dom'
 
 	export default {
 		name: 'IndicatorLight',

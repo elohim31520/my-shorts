@@ -41,7 +41,7 @@
 <script setup lang="jsx">
 	import SlideItem from '@/common/components/slide/SlideItem.vue'
 	import { onMounted, onUnmounted, reactive, ref } from 'vue'
-	import bus, { EVENT_KEY } from '@/common/utils/bus'
+	import bus, { EVENT_KEY } from '@/modules/bus'
 	import { _stop, _stopPropagation } from '@/common/utils'
 	import SlideList from './SlideList.vue'
 	import { recommendedVideo } from '@/api/shorts'
