@@ -228,7 +228,6 @@
 		_checkImgUrl,
 		_formatNumber,
 		_no,
-		_showSelectDialog,
 		_sleep,
 		_time,
 		sampleSize,

@@ -2,8 +2,6 @@ import SimpleConfirmDialog from '../components/dialog/SimpleConfirmDialog.vue'
 import ConfirmDialog from '../components/dialog/ConfirmDialog.vue'
 import Loading from '../components/Loading.vue'
 import NoticeDialog from '@/common/components/dialog/NoticeDialog.vue'
-import SlideUser from '@/common/components/slide/SlideUser.vue'
-import BaseVideo from '@/common/components/slide/BaseVideo.vue'
 import { h, createApp } from 'vue'
 import { toast } from '@/modules/util'
 
@@ -332,40 +330,4 @@ export function _showNoticeDialog(
 
 export function _no() {
 	toast('未实现')
-}
-
-export function slideItemRender(props) {
-	return function render(item, index, play, uniqueId) {
-		let node
-		switch (item.type) {
-			case 'img':
-				node = h('img', {
-					src: item.src,
-					style: { height: '100%' },
-					alt: '',
-				})
-				break
-			case 'user':
-				node = h(SlideUser, {
-					...props,
-				})
-				break
-			case 'send-video':
-				node = h('video', {
-					src: item.src,
-					style: { height: '100%' },
-				})
-				break
-			default:
-				node = h(BaseVideo, {
-					isPlay: play,
-					item: item,
-					index: index,
-					position: { uniqueId, index },
-					...props,
-				})
-				break
-		}
-		return node
-	}
 }

@@ -20,7 +20,9 @@
 	import { onMounted, onUnmounted, reactive, ref } from 'vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
 	import { useBaseStore } from '@/stores/shorts'
-	import { slideItemRender } from '@/common/utils'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { slideItemRender } = useShorts()
 
 	const props = defineProps({
 		cbs: {
