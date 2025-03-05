@@ -98,7 +98,6 @@
 		_hideLoading,
 		_no,
 		_showLoading,
-		_sleep,
 		_stopPropagation,
 	} from '@/common/utils'
 	// import DouyinCode from "./DouyinCode";
@@ -287,9 +286,10 @@
 			async copyLink() {
 				this.closeShare()
 				_showLoading()
-				await _sleep(500)
-				_hideLoading()
-				toast('复制成功')
+				_delay(() => {
+					_hideLoading()
+					toast('复制成功')
+				}, 500)
 			},
 			toggleCollect() {
 				this.closeShare()

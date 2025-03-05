@@ -163,7 +163,7 @@
 </template>
 <script>
 	import Check from '@/common/components/Check.vue'
-	import { _hideLoading, _showLoading, _sleep } from '@/common/utils'
+	import { _hideLoading, _showLoading } from '@/common/utils'
 	import { toast } from '@/modules/util'
 
 	export default {
@@ -234,9 +234,10 @@
 			async submit() {
 				this.cancel()
 				_showLoading()
-				await _sleep(1000)
-				_hideLoading()
-				toast('感谢你的反馈，我们会尽快答复！')
+				_delay(() => {
+					_hideLoading()
+					toast('感谢你的反馈，我们会尽快答复！')
+				}, 1000)
 			},
 		},
 	}

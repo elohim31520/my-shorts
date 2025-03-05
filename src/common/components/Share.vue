@@ -248,13 +248,7 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import { toast } from '@/modules/util'
-	import {
-		_checkImgUrl,
-		_hideLoading,
-		_no,
-		_showLoading,
-		_sleep,
-	} from '@/common/utils'
+	import { _checkImgUrl, _hideLoading, _no, _showLoading } from '@/common/utils'
 	import { useClipboard } from '@vueuse/core'
 
 	const { copy } = useClipboard()
@@ -305,13 +299,14 @@
 	async function copyLink() {
 		closeShare()
 		_showLoading()
-		await _sleep(500)
-		_hideLoading()
-		copy(
-			props.item.share_info.share_link_desc + props.item.share_info.share_url
-		)
-		//TODO 抖音样式改了
-		toast('复制成功')
+		_delay(() => {
+			_hideLoading()
+			copy(
+				props.item.share_info.share_link_desc + props.item.share_info.share_url
+			)
+			//TODO 抖音样式改了
+			toast('复制成功')
+		}, 500)
 	}
 
 	function toggleCall(item) {

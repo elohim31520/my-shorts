@@ -59,7 +59,7 @@
 </template>
 <script setup lang="ts">
 	import { onMounted, reactive } from 'vue'
-	import { _hideLoading, _no, _showLoading, _sleep } from '@/common/utils'
+	import { _hideLoading, _no, _showLoading } from '@/common/utils'
 
 	import BaseHeader from '@/common/components/BaseHeader.vue'
 
@@ -81,12 +81,13 @@
 
 	async function upload() {
 		_showLoading()
-		await _sleep(500)
-		_hideLoading()
-		data.photos.push(
-			new URL(`/shorts/img/poster/${data.photos.length}.jpg`, import.meta.url)
-				.href
-		)
+		_delay(() => {
+			_hideLoading()
+			data.photos.push(
+				new URL(`/shorts/img/poster/${data.photos.length}.jpg`, import.meta.url)
+					.href
+			)
+		}, 500)
 	}
 </script>
 

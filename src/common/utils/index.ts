@@ -48,15 +48,6 @@ export function _getUserDouyinId(item) {
 	return item.author.unique_id || item.author.short_id
 }
 
-/**
- * @param {number} duration
- */
-export function _sleep(duration) {
-	return new Promise((resolve) => {
-		setTimeout(resolve, duration)
-	})
-}
-
 export function sampleSize(arr, num) {
 	const list = []
 	const indexs = []

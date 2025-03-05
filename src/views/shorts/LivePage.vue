@@ -137,7 +137,7 @@
 	import { nextTick } from 'vue'
 	import { mapState } from 'pinia'
 	import { useBaseStore } from '@/stores/shorts'
-	import { _checkImgUrl, _sleep } from '@/common/utils'
+	import { _checkImgUrl } from '@/common/utils'
 
 	const Mock = {
 		mock: () => '',
@@ -228,9 +228,10 @@
 			this.page = this.$refs.page
 			this.timer1 = setInterval(async () => {
 				this.sendGift()
-				await _sleep(300)
-				this.sendGift()
-				this.joinUser()
+				_delay(() => {
+					this.sendGift()
+					this.joinUser()
+				}, 300)
 			}, 1000)
 			this.timer2 = setInterval(async () => {
 				this.sendBarrage()

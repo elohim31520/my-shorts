@@ -224,13 +224,7 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import Loading from '@/common/components/Loading.vue'
 	import Search from './Search.vue'
-	import {
-		_checkImgUrl,
-		_formatNumber,
-		_no,
-		_sleep,
-		sampleSize,
-	} from '@/common/utils'
+	import { _checkImgUrl, _formatNumber, _no, sampleSize } from '@/common/utils'
 	import { getTimeDifference } from '@/modules/date'
 	import { useBaseStore } from '@/stores/shorts'
 	import { videoCommentsApi } from '@/api/shorts'
@@ -311,14 +305,15 @@
 			async handShowChildren(item) {
 				this.loadChildrenItemCId = item.comment_id
 				this.loadChildren = true
-				await _sleep(500)
-				this.loadChildren = false
-				if (item.showChildren) {
-					item.children = item.children.concat(sampleSize(this.comments, 10))
-				} else {
-					item.children = sampleSize(this.comments, 3)
-					item.showChildren = true
-				}
+				_delay(() => {
+					this.loadChildren = false
+					if (item.showChildren) {
+						item.children = item.children.concat(sampleSize(this.comments, 10))
+					} else {
+						item.children = sampleSize(this.comments, 3)
+						item.showChildren = true
+					}
+				}, 500)
 			},
 			send() {
 				if (!this.comment.trim()) {
