@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { friends, panel } from '@/api/shorts'
 import DISPLAY_TYPE from '@/constants/shorts'
-import resource from '@/mock/resource'
 
 export const useBaseStore = defineStore('base', {
 	state: () => {
@@ -50,7 +49,7 @@ export const useBaseStore = defineStore('base', {
 					},
 				],
 			},
-			friends: resource.users,
+			friends: [],
 			message: '',
 		}
 	},
