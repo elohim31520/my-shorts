@@ -1,6 +1,5 @@
 import ConfirmDialog from '../components/dialog/ConfirmDialog.vue'
 import Loading from '../components/Loading.vue'
-import NoticeDialog from '@/common/components/dialog/NoticeDialog.vue'
 import { h, createApp } from 'vue'
 import { toast } from '@/modules/util'
 
@@ -87,44 +86,6 @@ export function _showConfirmDialog(
 				okText: okText,
 				cancelText: cancelText,
 				onOk: tempOkCb,
-			})
-		},
-	})
-
-	const parent = document.createElement('div')
-	parent.classList.add('dialog-ctn', 'fade-in')
-	document.body.append(parent)
-	app.mount(parent)
-}
-export function _showNoticeDialog(
-	title,
-	subtitle,
-	subtitleColor,
-	cancelCb,
-	cancelText
-) {
-	const remove = () => {
-		const parent = document.querySelector('.dialog-ctn')
-		parent.classList.replace('fade-in', 'fade-out')
-		setTimeout(() => {
-			parent.remove()
-		}, 300)
-	}
-
-	const tempCancelCb = (e) => {
-		remove()
-		cancelCb(e)
-	}
-
-	const app = createApp({
-		render() {
-			return h(NoticeDialog, {
-				onCancel: tempCancelCb,
-				onDismiss: remove,
-				title: title,
-				subtitleColor: subtitleColor,
-				cancelText: cancelText,
-				subtitle: subtitle,
 			})
 		},
 	})
