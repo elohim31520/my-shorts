@@ -309,7 +309,7 @@
 	import Search from '../../components/Search.vue'
 	import Dom from '../../utils/dom'
 	import { computed, nextTick, onMounted, reactive, watch } from 'vue'
-	import { _formatNumber, _no, _showSimpleConfirmDialog } from '@/common/utils'
+	import { _formatNumber, _no } from '@/common/utils'
 	import { useNav } from '@/common/utils/hooks/useNav'
 
 	import SlideItem from '@/common/components/slide/SlideItem.vue'
@@ -794,15 +794,17 @@
 
 	function toggle() {
 		if (data.isExpand) {
-			_showSimpleConfirmDialog(
-				'是否清空历史记录？',
-				() => {
-					data.history = []
-				},
-				null,
-				'确定',
-				'取消'
-			)
+			console.log('TODO: Dialog');
+			
+			// _showSimpleConfirmDialog(
+			// 	'是否清空历史记录？',
+			// 	() => {
+			// 		data.history = []
+			// 	},
+			// 	null,
+			// 	'确定',
+			// 	'取消'
+			// )
 		} else {
 			data.isExpand = true
 		}
