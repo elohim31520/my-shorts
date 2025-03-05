@@ -72,6 +72,8 @@
 			if (newVal) {
 				pagePosition.value = _css(page, 'position')
 				page.style.position = 'absolute'
+				page.style.width = '100vw'
+				page.style.height = '100vh'
 				scroll.value = document.documentElement.scrollTop
 				document.body.style.position = 'fixed'
 				document.body.style.top = -scroll.value + 'px'
