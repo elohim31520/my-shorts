@@ -12,14 +12,13 @@
 	>
 		<template v-slot:header>
 			<div class="title">
-				<SvgIcon name="icon_Input_box_cancel" size="1.875rem" />
 				<div class="num">{{ _formatNumber(comments.length) }}条评论</div>
 				<div class="right">
-					<Icon
-						icon="prime:arrow-up-right-and-arrow-down-left-from-center"
-						@click.stop="_no"
+					<SvgIcon
+						name="icon_Input_box_cancel"
+						size="1.875rem"
+						@click="cancel"
 					/>
-					<Icon icon="ic:round-close" @click="cancel" />
 				</div>
 			</div>
 		</template>
@@ -53,34 +52,17 @@
 												:class="item.user_digged && 'loved'"
 												@click="loved(item)"
 											>
-												<Icon
-													icon="icon-park-solid:like"
-													v-show="item.user_digged"
-													class="love-image"
+												<SvgIcon
+													:name="
+														item.user_digged ? 'like_click3' : 'like_click1'
+													"
+													size="0.9375rem"
+													class="mr-4"
 												/>
-												<Icon
-													icon="icon-park-outline:like"
-													v-show="!item.user_digged"
-													class="love-image"
-												/>
+
 												<span v-if="item.digg_count">
 													{{ _formatNumber(item.digg_count) }}
 												</span>
-											</div>
-											<div
-												class="love"
-												@click="item.user_buried = !item.user_buried"
-											>
-												<Icon
-													v-if="item.user_buried"
-													icon="icon-park-solid:dislike-two"
-													class="love-image"
-												/>
-												<Icon
-													v-else
-													icon="icon-park-outline:dislike"
-													class="love-image"
-												/>
 											</div>
 										</div>
 									</div>
@@ -118,15 +100,12 @@
 													:class="child.user_digged && 'loved'"
 													@click="loved(item)"
 												>
-													<Icon
-														icon="icon-park-solid:like"
-														v-show="child.user_digged"
-														class="love-image"
-													/>
-													<Icon
-														icon="icon-park-outline:like"
-														v-show="!child.user_digged"
-														class="love-image"
+													<SvgIcon
+														:name="
+															child.user_digged ? 'like_click3' : 'like_click1'
+														"
+														size="0.9375rem"
+														class="mr-4"
 													/>
 													<span>{{ _formatNumber(child.digg_count) }}</span>
 												</div>
@@ -147,7 +126,7 @@
 										item.showChildren ? '更多' : `${item.sub_comment_count}条`
 									}}回复
 								</span>
-								<Icon icon="ep:arrow-down-bold" />
+								<SvgIcon name="icon_Log_arrow" size="1.375rem" />
 							</div>
 						</div>
 					</div>
@@ -401,6 +380,7 @@
 			gap: 12px;
 			position: relative;
 			z-index: 9;
+			margin-left: auto;
 
 			svg {
 				color: #000;
