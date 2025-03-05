@@ -19,7 +19,7 @@
 						icon="prime:arrow-up-right-and-arrow-down-left-from-center"
 						@click.stop="_no"
 					/>
-					<Icon icon="ic:round-close" v-click="cancel" />
+					<Icon icon="ic:round-close" @click="cancel" />
 				</div>
 			</div>
 		</template>
@@ -236,7 +236,6 @@
 	} from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
 	import { videoCommentsApi } from '@/api/shorts'
-	import { getListYear } from '@/api/statistic'
 
 	export default {
 		name: 'Comment',

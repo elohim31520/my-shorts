@@ -26,7 +26,7 @@
 <script setup lang="ts">
 	import { inject, onMounted, computed, ref } from 'vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
-	import { useClick } from '@/common/utils/hooks/useClick'
+	import { useClick } from '@/views/shorts/hooks/useClick'
 	import SvgIcon from '@/components/SvgIcon/index.vue'
 
 	const isPlaying = inject<boolean>('isPlaying')

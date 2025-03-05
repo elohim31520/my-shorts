@@ -69,7 +69,7 @@
 	import BaseMusic from '../BaseMusic.vue'
 	import { _formatNumber, cloneDeep } from '@/common/utils'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
-	import { useClick } from '@/common/utils/hooks/useClick'
+	import { useClick } from '@/views/shorts/hooks/useClick'
 	import { inject } from 'vue'
 	import SvgIcon from '@/components/SvgIcon/index.vue'
 
