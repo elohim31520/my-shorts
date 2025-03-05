@@ -175,12 +175,8 @@
 	import { mapState } from 'pinia'
 	import { useBaseStore } from '@/stores/shorts'
 	import { toast } from '@/modules/util'
-	import {
-		_checkImgUrl,
-		_no,
-		_storageGet,
-		_storageSet,
-	} from '@/common/utils'
+	import { _checkImgUrl, _no } from '@/common/utils'
+	import { localStore } from '@/modules/storage'
 	/*
 	 * 分享到各种工具
 	 * */
@@ -237,7 +233,7 @@
 				if (newVal === -1) return
 				this.showShareDialog = true
 				if (this.canDownload) {
-					let downloadedVideo = _storageGet('downloadedVideo', [])
+					let downloadedVideo = localStore.downloadedVideo || []
 					if (
 						!downloadedVideo.find((v) => v === this.videoId) &&
 						!this.downloading
@@ -276,9 +272,9 @@
 					this.downloading = true
 					let time = setInterval(() => {
 						if (this.progress >= 100) {
-							let downloadedVideo = _storageGet('downloadedVideo', [])
+							let downloadedVideo = localStore.downloadedVideo || []
 							downloadedVideo.push(this.videoId)
-							_storageSet('downloadedVideo', downloadedVideo)
+							localStore.downloadedVideo = downloadedVideo
 							clearInterval(time)
 							this.downloading = false
 							resolve()

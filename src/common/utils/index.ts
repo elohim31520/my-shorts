@@ -7,18 +7,6 @@ import { toast } from '@/modules/util'
 
 const IMG_URL = '/shorts/images/'
 
-export function _storageSet(key, value) {
-	localStorage.setItem(key, JSON.stringify(value))
-}
-
-export function _storageGet(key, defaultValue = '') {
-	const res = localStorage.getItem(key)
-	if (res) {
-		return JSON.parse(res)
-	}
-	return defaultValue
-}
-
 export function _stopPropagation(e: Event) {
 	e.stopImmediatePropagation()
 	e.stopPropagation()
