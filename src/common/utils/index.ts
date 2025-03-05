@@ -1,4 +1,3 @@
-import ConfirmDialog from '../components/dialog/ConfirmDialog.vue'
 import Loading from '../components/Loading.vue'
 import { h, createApp } from 'vue'
 import { toast } from '@/modules/util'
@@ -44,56 +43,6 @@ export function _showLoading() {
 export function _hideLoading() {
 	const parent = document.querySelector('.dialog-ctn')
 	parent.remove()
-}
-
-export function _showConfirmDialog(
-	title,
-	subtitle,
-	subtitleColor,
-	okCb,
-	cancelCb,
-	okText,
-	cancelText,
-	cancelTextColor
-) {
-	const remove = () => {
-		const parent = document.querySelector('.dialog-ctn')
-		parent.classList.replace('fade-in', 'fade-out')
-		setTimeout(() => {
-			parent.remove()
-		}, 300)
-	}
-
-	const tempOkCb = (e) => {
-		remove()
-		okCb && okCb(e)
-	}
-
-	const tempCancelCb = (e) => {
-		remove()
-		cancelCb && cancelCb(e)
-	}
-
-	const app = createApp({
-		render() {
-			return h(ConfirmDialog, {
-				onCancel: tempCancelCb,
-				onDismiss: remove,
-				title: title,
-				subtitle: subtitle,
-				subtitleColor: subtitleColor,
-				cancelTextColor: cancelTextColor,
-				okText: okText,
-				cancelText: cancelText,
-				onOk: tempOkCb,
-			})
-		},
-	})
-
-	const parent = document.createElement('div')
-	parent.classList.add('dialog-ctn', 'fade-in')
-	document.body.append(parent)
-	app.mount(parent)
 }
 
 export function _no() {
