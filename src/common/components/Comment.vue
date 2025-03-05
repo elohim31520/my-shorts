@@ -42,7 +42,7 @@
 									<div class="time-wrapper">
 										<div class="left">
 											<div class="time">
-												{{ _time(item.create_time)
+												{{ getTimeDifference(item.create_time)
 												}}{{ item.ip_location && ` · ${item.ip_location}` }}
 											</div>
 											<div class="reply-text">回复</div>
@@ -106,7 +106,7 @@
 											<div class="time-wrapper">
 												<div class="left">
 													<div class="time">
-														{{ _time(child.create_time)
+														{{ getTimeDifference(child.create_time)
 														}}{{
 															child.ip_location && ` · ${item.ip_location}`
 														}}
@@ -229,9 +229,9 @@
 		_formatNumber,
 		_no,
 		_sleep,
-		_time,
 		sampleSize,
 	} from '@/common/utils'
+	import { getTimeDifference } from '@/modules/date'
 	import { useBaseStore } from '@/stores/shorts'
 	import { videoCommentsApi } from '@/api/shorts'
 	import BaseMask from '@/common/components/BaseMask.vue'
@@ -298,8 +298,8 @@
 		},
 		mounted() {},
 		methods: {
+			getTimeDifference,
 			_no,
-			_time,
 			_formatNumber,
 			_checkImgUrl,
 			// 评论发送成功后调用此方法
