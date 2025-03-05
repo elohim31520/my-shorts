@@ -180,7 +180,6 @@
 		_no,
 		_storageGet,
 		_storageSet,
-		cloneDeep,
 	} from '@/common/utils'
 	/*
 	 * 分享到各种工具
@@ -209,7 +208,7 @@
 				this.change(newVal)
 			},
 			showShareDialog() {
-				this.localFriends = cloneDeep(this.friends)
+				this.localFriends = _cloneDeep(this.friends)
 			},
 		},
 		data() {

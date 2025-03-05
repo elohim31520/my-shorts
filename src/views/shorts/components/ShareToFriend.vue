@@ -118,7 +118,7 @@
 	import { mapState } from 'pinia'
 	import Search from '@/common/components/Search.vue'
 	import { useBaseStore } from '@/stores/shorts'
-	import { _checkImgUrl, cloneDeep } from '@/common/utils'
+	import { _checkImgUrl } from '@/common/utils'
 	/*
 分享给朋友
 * */
@@ -154,7 +154,7 @@
 		watch: {
 			searchKey(newVal) {
 				if (newVal) {
-					let temp = cloneDeep(this.localFriends)
+					let temp = _cloneDeep(this.localFriends)
 					this.searchResult = temp.filter((v) => {
 						// return v.name.includes(newVal) || v.account.includes(newVal);
 						return v.name.includes(newVal)
@@ -165,7 +165,7 @@
 			},
 			modelValue(newVal) {
 				if (newVal) {
-					this.localFriends = cloneDeep(this.friends.all)
+					this.localFriends = _cloneDeep(this.friends.all)
 					this.localFriends.map((v) => (v.shared = false))
 				} else {
 					this.searchKey = ''

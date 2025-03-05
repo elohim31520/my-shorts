@@ -25,7 +25,7 @@
 <script setup>
 	import { reactive, ref, watch } from 'vue'
 
-	import { _no, _stopPropagation, cloneDeep } from '@/common/utils'
+	import { _no, _stopPropagation } from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
 	// import AlbumDetail from '@/views/other/AlbumDetail.vue'
 	import { _css } from '@/common/utils/dom'
@@ -115,13 +115,11 @@
 		item.note_card.createTime = Mock.Random.date('MM-dd')
 		item.note_card.interact_info.collect_count = Mock.Random.integer(60, 3000)
 		item.note_card.interact_info.share_count = Mock.Random.integer(60, 3000)
-		state.current = cloneDeep(item)
-		// console.log(state.current)
+		state.current = _cloneDeep(item)
 
 		state.d = true
 
 		let domRect = e.currentTarget.getBoundingClientRect()
-		// // console.log('e', domRect)
 
 		let s = document.querySelector('.shadow')
 

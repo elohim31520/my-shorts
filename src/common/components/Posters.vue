@@ -32,7 +32,6 @@
 <script setup>
 	import { _checkImgUrl, _formatNumber } from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
-	import { cloneDeep } from '@/common/utils'
 
 	const store = useBaseStore()
 	const props = defineProps({
@@ -53,7 +52,7 @@
 	})
 
 	function goDetail(index) {
-		store.routeData = cloneDeep({ list: props.list, index })
+		store.routeData = _cloneDeep({ list: props.list, index })
 		console.log('router /video-detail')
 	}
 

@@ -67,7 +67,7 @@
 
 <script setup lang="ts">
 	import BaseMusic from '../BaseMusic.vue'
-	import { _formatNumber, cloneDeep } from '@/common/utils'
+	import { _formatNumber } from '@/common/utils'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
 	import { useClick } from '@/views/shorts/hooks/useClick'
 	import { inject } from 'vue'
@@ -99,7 +99,7 @@
 	])
 
 	function _updateItem(props, key, val) {
-		const old = cloneDeep(props.item)
+		const old = _cloneDeep(props.item)
 		old[key] = val
 		emit('update:item', old)
 		bus.emit(EVENT_KEY.UPDATE_ITEM, { position: position.value, item: old })

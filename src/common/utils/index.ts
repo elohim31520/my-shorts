@@ -69,10 +69,6 @@ export function _sleep(duration) {
 	})
 }
 
-export function cloneDeep(val) {
-	return JSON.parse(JSON.stringify(val))
-}
-
 export function sampleSize(arr, num) {
 	const list = []
 	const indexs = []
