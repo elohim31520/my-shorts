@@ -2,13 +2,13 @@
 	import { reactive, ref, watch } from 'vue'
 	import {
 		_checkImgUrl,
-		_duration,
 		_formatNumber,
 		_stopPropagation,
 	} from '@/common/utils'
 	import { recommendedLongVideo } from '@/api/shorts'
 	import ScrollList from '@/common/components/ScrollList.vue'
 	import { useNav } from '@/common/utils/hooks/useNav'
+	import { formatTimestamp } from '@/modules/date'
 
 	const props = defineProps({
 		active: Boolean,
@@ -140,7 +140,7 @@
 							alt=""
 							class="poster"
 						/>
-						<div class="duration">{{ _duration(item.duration / 1000) }}</div>
+						<div class="duration">{{ formatTimestamp(item.duration / 1000, 'mm:ss') }}</div>
 						<div class="title">
 							{{ item.desc }}
 						</div>

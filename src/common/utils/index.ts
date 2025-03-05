@@ -56,30 +56,6 @@ export function _checkImgUrl(url) {
 	return IMG_URL + url
 }
 
-export function _duration(v) {
-	if (!v) return '00:00'
-	const m = Math.floor(v / 60)
-	// let s = v % 60
-	const s = Math.round(v % 60)
-	let str: string = ''
-	if (m === 0) {
-		str = '00'
-	} else if (m > 0 && m < 10) {
-		str = '0' + m
-	} else {
-		str = m + ''
-	}
-	str += ':'
-	if (s === 0) {
-		str += '00'
-	} else if (s > 0 && s < 10) {
-		str += '0' + s
-	} else {
-		str += s
-	}
-	return str
-}
-
 export function _getUserDouyinId(item) {
 	return item.author.unique_id || item.author.short_id
 }

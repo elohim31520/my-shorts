@@ -79,8 +79,12 @@
 					@touchend="touchend"
 				>
 					<div class="time" v-if="state.isMove">
-						<span class="currentTime">{{ _duration(state.currentTime) }}</span>
-						<span class="duration">/ {{ _duration(state.duration) }}</span>
+						<span class="currentTime">
+							{{ formatTimestamp(state.currentTime) }}
+						</span>
+						<span class="duration">
+							/ {{ formatTimestamp(state.duration) }}
+						</span>
 					</div>
 					<template v-if="state.duration > 15 || state.isMove || !isPlaying">
 						<div class="bg"></div>
@@ -94,7 +98,7 @@
 </template>
 
 <script setup lang="ts">
-	import { _checkImgUrl, _duration, _stopPropagation } from '@/common/utils'
+	import { _checkImgUrl, _stopPropagation } from '@/common/utils'
 	import Loading from '@/common/components/Loading.vue'
 	import ItemToolbar from './ItemToolbar.vue'
 	import ItemDesc from './ItemDesc.vue'
@@ -111,6 +115,7 @@
 		useTemplateRef,
 	} from 'vue'
 	import { _css } from '@/common/utils/dom'
+	import { format } from 'date-fns'
 
 	defineOptions({
 		name: 'BaseVideo',
@@ -352,17 +357,17 @@
 	}
 
 	function click({ uniqueId, index, type }) {
-		console.log(uniqueId, index, type);
-		
+		console.log(uniqueId, index, type)
+
 		if (
 			props.position.uniqueId === uniqueId &&
 			props.position.index === index
-		) {			
+		) {
 			if (type === EVENT_KEY.ITEM_TOGGLE) {
 				if (props.isLive) {
 					pause()
 					// TODO
-					console.log('todo:這裡要跳轉且代參數：', { id: props.item.aweme_id });
+					console.log('todo:這裡要跳轉且代參數：', { id: props.item.aweme_id })
 					// bus.emit(EVENT_KEY.NAV, {
 					// 	path: '/home/live',
 					// 	query: { id: props.item.aweme_id },
@@ -397,8 +402,8 @@
 	}
 
 	function pause() {
-		console.log('暫停');
-		
+		console.log('暫停')
+
 		state.status = SlideItemPlayStatus.Pause
 		videoEl.value.pause()
 	}
@@ -429,6 +434,14 @@
 		setTimeout(() => (state.isMove = false), 1000)
 		videoEl.value.eoEl.currentTime = state.currentTime
 		play()
+	}
+
+	function formatTimestamp(seconds) {
+		if (!seconds) return '00:00'
+
+		const timestamp = seconds * 1000
+		const date = new Date(timestamp)
+		return format(date, 'mm:ss')
 	}
 </script>
 
