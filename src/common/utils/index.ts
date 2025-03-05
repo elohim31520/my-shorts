@@ -5,8 +5,6 @@ import NoticeDialog from '@/common/components/dialog/NoticeDialog.vue'
 import { h, createApp } from 'vue'
 import { toast } from '@/modules/util'
 
-const IMG_URL = '/shorts/images/'
-
 export function _stopPropagation(e: Event) {
 	e.stopImmediatePropagation()
 	e.stopPropagation()
@@ -28,22 +26,6 @@ export function _formatNumber(num) {
 	}
 }
 
-export function _checkImgUrl(url) {
-	// console.log(url)
-	if (!url) return
-	//本地图片
-	if (
-		url.includes('assets/img') ||
-		url.includes('file://') ||
-		url.includes('data:image') ||
-		url.includes('http') ||
-		url.includes('https')
-	) {
-		return url
-	}
-	return IMG_URL + url
-}
-
 export function _getUserDouyinId(item) {
 	return item.author.unique_id || item.author.short_id
 }
@@ -62,7 +44,6 @@ export function _showLoading() {
 }
 
 export function _hideLoading() {
-	if (import.meta.env.SSR) return
 	const parent = document.querySelector('.dialog-ctn')
 	parent.remove()
 }

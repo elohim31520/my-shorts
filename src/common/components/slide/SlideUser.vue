@@ -22,7 +22,7 @@
 					v-for="(i, index) in modelValue.videos.slice(0, 3)"
 					@click="_no"
 				>
-					<img class="poster" :src="_checkImgUrl(i.cover)" />
+					<img class="poster" :src="(i.cover)" />
 					<div class="num">
 						<img class="love" src="/shorts/img/icon/love.svg" alt="" />
 						<span>{{ _formatNumber(i.digg_count) }}</span>
@@ -37,7 +37,7 @@
 	</div>
 </template>
 <script>
-	import { _checkImgUrl, _formatNumber, _no } from '../../utils'
+	import { _formatNumber, _no } from '../../utils'
 	import BaseButton from '@/common/components/BaseButton.vue'
 
 	export default {
@@ -246,7 +246,7 @@
 		created() {
 			console.log('modelValue', this.modelValue)
 		},
-		methods: { _formatNumber, _checkImgUrl, _no },
+		methods: { _formatNumber, _no },
 	}
 </script>
 

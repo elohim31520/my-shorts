@@ -15,11 +15,7 @@
 				<transition name="fade">
 					<div class="float-user" v-if="state.floatFixed">
 						<img
-							v-lazy="
-								_checkImgUrl(
-									props.currentItem.author.avatar_168x168.url_list[0]
-								)
-							"
+							v-lazy="props.currentItem.author.avatar_168x168.url_list[0]"
 							class="avatar"
 						/>
 						<!-- <img
@@ -72,9 +68,9 @@
 							: 0,
 					}"
 					ref="cover"
-					:src="_checkImgUrl(props.currentItem.author.cover_url[0].url_list[0])"
+					:src="(props.currentItem.author.cover_url[0].url_list[0])"
 					@click="
-						state.previewImg = _checkImgUrl(
+						state.previewImg = (
 							props.currentItem.author.cover_url[0].url_list[0]
 						)
 					"
@@ -84,11 +80,11 @@
 				<div class="avatar-wrapper">
 					<img
 						v-lazy="
-							_checkImgUrl(props.currentItem.author.avatar_168x168.url_list[0])
+							(props.currentItem.author.avatar_168x168.url_list[0])
 						"
 						class="avatar"
 						@click="
-							state.previewImg = _checkImgUrl(
+							state.previewImg = (
 								props.currentItem.author.avatar_300x300.url_list[0]
 							)
 						"
@@ -183,7 +179,7 @@
 						:key="i"
 						v-for="(item, i) in props.currentItem.author.card_entries"
 					>
-						<img :src="_checkImgUrl(item.icon_dark.url_list[0])" alt="" />
+						<img :src="(item.icon_dark.url_list[0])" alt="" />
 						<div class="right">
 							<div class="top">{{ item.title }}</div>
 							<div class="bottom">{{ item.sub_title }}</div>
@@ -250,7 +246,7 @@
 						<img
 							:style="item.select ? 'opacity: .5;' : ''"
 							class="avatar"
-							:src="_checkImgUrl(item.avatar)"
+							:src="(item.avatar)"
 							alt=""
 						/>
 						<span class="name">{{ item.name }}</span>
@@ -287,7 +283,6 @@
 <script setup lang="ts">
 	import { reactive, ref, watch } from 'vue'
 	import {
-		_checkImgUrl,
 		_formatNumber,
 		_getUserDouyinId,
 		_no,

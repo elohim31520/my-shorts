@@ -12,7 +12,7 @@
 					:key="j"
 					v-for="(i, j) in store.users"
 				>
-					<img :src="_checkImgUrl(i.avatar_168x168?.url_list[0])" alt="" />
+					<img :src="i.avatar_168x168?.url_list[0]" alt="" />
 					<span>{{ i.nickname }}</span>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 	import SlideItem from '@/common/components/slide/SlideItem.vue'
 	import { onMounted, onUnmounted, reactive, ref } from 'vue'
 	import bus, { EVENT_KEY } from '@/common/utils/bus'
-	import { _checkImgUrl, _stop, _stopPropagation } from '@/common/utils'
+	import { _stop, _stopPropagation } from '@/common/utils'
 	import SlideList from './SlideList.vue'
 	import { recommendedVideo } from '@/api/shorts'
 	import { useBaseStore } from '@/stores/shorts'

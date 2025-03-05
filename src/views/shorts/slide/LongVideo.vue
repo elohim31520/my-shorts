@@ -1,10 +1,6 @@
 <script setup>
 	import { reactive, ref, watch } from 'vue'
-	import {
-		_checkImgUrl,
-		_formatNumber,
-		_stopPropagation,
-	} from '@/common/utils'
+	import { _formatNumber, _stopPropagation } from '@/common/utils'
 	import { recommendedLongVideo } from '@/api/shorts'
 	import ScrollList from '@/common/components/ScrollList.vue'
 	import { useNav } from '@/common/utils/hooks/useNav'
@@ -111,7 +107,7 @@
 								:playsinline="true"
 								:fullscreen="false"
 								v-is-can-play
-								:poster="_checkImgUrl(item.video.cover.url_list[0])"
+								:poster="item.video.cover.url_list[0]"
 								:src="item.video.play_addr.url_list[0]"
 							></video>
 							<div class="options">
@@ -136,18 +132,20 @@
 						</div>
 						<img
 							v-else
-							v-lazy="_checkImgUrl(item.video.cover.url_list[0])"
+							v-lazy="item.video.cover.url_list[0]"
 							alt=""
 							class="poster"
 						/>
-						<div class="duration">{{ formatTimestamp(item.duration / 1000, 'mm:ss') }}</div>
+						<div class="duration">
+							{{ formatTimestamp(item.duration / 1000, 'mm:ss') }}
+						</div>
 						<div class="title">
 							{{ item.desc }}
 						</div>
 						<div class="bottom">
 							<div class="l">
 								<img
-									v-lazy="_checkImgUrl(item.author.avatar_168x168.url_list[0])"
+									v-lazy="item.author.avatar_168x168.url_list[0]"
 									alt=""
 									class="avatar"
 								/>

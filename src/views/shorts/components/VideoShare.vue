@@ -61,7 +61,7 @@
 			</div>
 			<div class="friends">
 				<div class="item" :key="i" v-for="(item, i) in friends.all">
-					<img class="left" v-lazy="_checkImgUrl(item.avatar)" alt="" />
+					<img class="left" v-lazy="(item.avatar)" alt="" />
 					<div class="right">
 						<span>{{ item.name }}</span>
 						<dy-button
@@ -94,7 +94,6 @@
 	import LoadingCircle from '@/common/components/LoadingCircle'
 	import { useBaseStore } from '@/stores/shorts'
 	import {
-		_checkImgUrl,
 		_hideLoading,
 		_no,
 		_showLoading,
@@ -275,7 +274,6 @@
 			}
 		},
 		methods: {
-			_checkImgUrl,
 			_no,
 			displayText(type) {
 				if (this.loading[type]) {

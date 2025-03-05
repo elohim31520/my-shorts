@@ -209,11 +209,7 @@
 								<div class="right">
 									<div class="center">
 										<div class="avatar-wrapper">
-											<img
-												v-lazy="_checkImgUrl(item.cover)"
-												alt=""
-												class="avatar"
-											/>
+											<img v-lazy="item.cover" alt="" class="avatar" />
 										</div>
 										<div class="desc">{{ item.name }}</div>
 									</div>
@@ -259,11 +255,7 @@
 												:class="item.living ? 'living' : ''"
 											>
 												<div class="avatar-out-line"></div>
-												<img
-													v-lazy="_checkImgUrl(item.logo)"
-													alt=""
-													class="avatar"
-												/>
+												<img v-lazy="item.logo" alt="" class="avatar" />
 											</div>
 											<div class="desc">{{ item.name }}</div>
 										</div>
@@ -317,12 +309,7 @@
 	import Search from '../../components/Search.vue'
 	import Dom from '../../utils/dom'
 	import { computed, nextTick, onMounted, reactive, watch } from 'vue'
-	import {
-		_checkImgUrl,
-		_formatNumber,
-		_no,
-		_showSimpleConfirmDialog,
-	} from '@/common/utils'
+	import { _formatNumber, _no, _showSimpleConfirmDialog } from '@/common/utils'
 	import { useNav } from '@/common/utils/hooks/useNav'
 
 	import SlideItem from '@/common/components/slide/SlideItem.vue'

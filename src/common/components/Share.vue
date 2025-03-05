@@ -31,7 +31,7 @@
 						<img
 							:style="item.select ? 'opacity: .5;' : ''"
 							class="avatar"
-							:src="_checkImgUrl(item.avatar)"
+							:src="item.avatar"
 							alt=""
 						/>
 						<span>{{ item.name }}</span>
@@ -248,7 +248,7 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import { toast } from '@/modules/util'
-	import { _checkImgUrl, _hideLoading, _no, _showLoading } from '@/common/utils'
+	import { _hideLoading, _no, _showLoading } from '@/common/utils'
 	import { useClipboard } from '@vueuse/core'
 
 	const { copy } = useClipboard()

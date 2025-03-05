@@ -28,11 +28,7 @@
 					<div class="item" :key="i" v-for="(item, i) in comments">
 						<div class="main">
 							<div class="content">
-								<img
-									:src="_checkImgUrl(item.avatar)"
-									alt=""
-									class="head-image"
-								/>
+								<img :src="item.avatar" alt="" class="head-image" />
 								<div class="comment-container">
 									<div class="name">{{ item.nickname }}</div>
 									<div class="detail" :class="item.user_buried && 'gray'">
@@ -73,11 +69,7 @@
 							<template v-if="item.showChildren">
 								<div class="reply" :key="i" v-for="(child, i) in item.children">
 									<div class="content">
-										<img
-											:src="_checkImgUrl(child.avatar)"
-											alt=""
-											class="head-image"
-										/>
+										<img :src="child.avatar" alt="" class="head-image" />
 										<div class="comment-container">
 											<div class="name">
 												{{ child.nickname }}
@@ -148,7 +140,7 @@
 							<img
 								:style="item.select ? 'opacity: .5;' : ''"
 								class="avatar"
-								:src="_checkImgUrl(item.avatar)"
+								:src="item.avatar"
 								alt=""
 							/>
 							<span>{{ item.name }}</span>
@@ -203,7 +195,7 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import Loading from '@/common/components/Loading.vue'
 	import Search from './Search.vue'
-	import { _checkImgUrl, _formatNumber, _no } from '@/common/utils'
+	import { _formatNumber, _no } from '@/common/utils'
 	import { getTimeDifference } from '@/modules/date'
 	import { useBaseStore } from '@/stores/shorts'
 	import { videoCommentsApi } from '@/api/shorts'
@@ -274,7 +266,6 @@
 			getTimeDifference,
 			_no,
 			_formatNumber,
-			_checkImgUrl,
 			sampleSize(arr, num) {
 				const list = []
 				const indexs = []
@@ -299,7 +290,9 @@
 				_delay(() => {
 					this.loadChildren = false
 					if (item.showChildren) {
-						item.children = item.children.concat(this.sampleSize(this.comments, 10))
+						item.children = item.children.concat(
+							this.sampleSize(this.comments, 10)
+						)
 					} else {
 						item.children = this.sampleSize(this.comments, 3)
 						item.showChildren = true

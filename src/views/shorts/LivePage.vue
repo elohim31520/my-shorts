@@ -25,7 +25,7 @@
 					<div class="liver">
 						<img
 							class="avatar"
-							:src="_checkImgUrl(userinfo.avatar_168x168.url_list[0])"
+							:src="(userinfo.avatar_168x168.url_list[0])"
 							alt=""
 						/>
 						<div class="desc">
@@ -137,7 +137,6 @@
 	import { nextTick } from 'vue'
 	import { mapState } from 'pinia'
 	import { useBaseStore } from '@/stores/shorts'
-	import { _checkImgUrl } from '@/common/utils'
 
 	const Mock = {
 		mock: () => '',
@@ -247,7 +246,6 @@
 			clearInterval(this.timer3)
 		},
 		methods: {
-			_checkImgUrl,
 			sendGift() {
 				if (import.meta.env.SSR) return
 				let page = new Dom(this.page)

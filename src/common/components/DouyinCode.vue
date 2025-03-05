@@ -3,10 +3,7 @@
 		<div class="DouyinCode" v-if="modelValue">
 			<div class="content">
 				<div class="video-poster">
-					<img
-						:src="_checkImgUrl(item.video.cover.url_list[0])"
-						class="poster"
-					/>
+					<img :src="item.video.cover.url_list[0]" class="poster" />
 				</div>
 				<div class="desc">
 					<div class="left">
@@ -56,7 +53,7 @@
 	</transition>
 </template>
 <script>
-	import { _checkImgUrl, _no } from '@/common/utils'
+	import { _no } from '@/common/utils'
 
 	export default {
 		name: 'DouyinCode',
@@ -76,7 +73,6 @@
 		created() {},
 		methods: {
 			_no,
-			_checkImgUrl,
 			cancel() {
 				this.$emit('update:modelValue', false)
 			},

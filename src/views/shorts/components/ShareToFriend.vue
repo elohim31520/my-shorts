@@ -26,7 +26,7 @@
 							v-for="(item, i) in searchResult"
 							@click="handleClick2(item)"
 						>
-							<img class="left" v-lazy="_checkImgUrl(item.avatar)" alt="" />
+							<img class="left" v-lazy="item.avatar" alt="" />
 							<div class="right">
 								<div class="info">
 									<span class="name">
@@ -67,7 +67,7 @@
 					<div class="friend-list">
 						<div class="index">所有朋友</div>
 						<div class="friend-item" :key="i" v-for="(item, i) in localFriends">
-							<img class="left" v-lazy="_checkImgUrl(item.avatar)" alt="" />
+							<img class="left" v-lazy="item.avatar" alt="" />
 							<div class="right">
 								<span>{{ item.name }}</span>
 								<dy-button
@@ -94,7 +94,7 @@
 
 				<div class="chat-list">
 					<div class="chat-item" :key="i" v-for="(item, i) in localFriends">
-						<img class="left" v-lazy="_checkImgUrl(item.avatar)" alt="" />
+						<img class="left" v-lazy="item.avatar" alt="" />
 						<div class="right">
 							<div class="title">
 								<div class="name">{{ text }}</div>
@@ -118,7 +118,6 @@
 	import { mapState } from 'pinia'
 	import Search from '@/common/components/Search.vue'
 	import { useBaseStore } from '@/stores/shorts'
-	import { _checkImgUrl } from '@/common/utils'
 	/*
 分享给朋友
 * */
@@ -183,7 +182,6 @@
 		},
 		created() {},
 		methods: {
-			_checkImgUrl,
 			handleClick() {
 				this.isShowRightText = true
 				this.height = 'calc(var(--vh, 1vh) * 100)'
