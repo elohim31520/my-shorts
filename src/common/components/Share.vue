@@ -314,7 +314,7 @@
 	}
 
 	function closeShare() {
-		store.friends.all = store.friends.all.map((v) => {
+		store.friends = _get(store, 'friends', []).map((v) => {
 			v.select = false
 			return v
 		})

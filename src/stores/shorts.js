@@ -55,7 +55,7 @@ export const useBaseStore = defineStore('base', {
 	},
 	getters: {
 		selectFriends() {
-			return this.friends.all.filter((v) => v.select)
+			return this.friends.filter((v) => v.select)
 		},
 	},
 	actions: {
