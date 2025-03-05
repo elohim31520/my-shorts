@@ -177,20 +177,12 @@
 					/>
 				</div>
 			</div>
-			<ConfirmDialog
-				title="私信给"
-				ok-text="发送"
-				v-model:visible="showPrivateChat"
-			>
-				<Search mode="light" v-model="test" :isShowSearchIcon="false" />
-			</ConfirmDialog>
 		</div>
 	</from-bottom-dialog>
 </template>
 
 <script lang="ts">
 	import AutoInput from './AutoInput.vue'
-	import ConfirmDialog from './dialog/ConfirmDialog.vue'
 	import { mapState } from 'pinia'
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import Loading from '@/common/components/Loading.vue'
@@ -205,7 +197,6 @@
 		name: 'Comment',
 		components: {
 			AutoInput,
-			ConfirmDialog,
 			FromBottomDialog,
 			Loading,
 			Search,
@@ -254,7 +245,6 @@
 					{ id: 4, name: '举报' },
 				],
 				selectRow: {},
-				showPrivateChat: false,
 				isInput: false,
 				isCall: false,
 				loadChildren: false,

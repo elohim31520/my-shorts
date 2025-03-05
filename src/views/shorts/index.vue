@@ -173,14 +173,6 @@
 			v-model="state.showFollowSetting2"
 		/>
 
-		<ConfirmDialog
-			title="设置备注名"
-			ok-text="确认"
-			v-model:visible="state.showChangeNote"
-		>
-			<Search mode="light" v-model="state.test" :isShowSearchIcon="false" />
-		</ConfirmDialog>
-
 		<ShareToFriend v-model="state.shareToFriend" />
 
 		<BaseMask v-if="!isMobile" @click="isMobile = true" />
@@ -225,7 +217,6 @@
 	import DouyinCode from '@/common/components/DouyinCode.vue'
 	import FollowSetting from '@/views/shorts/components/FollowSetting.vue'
 	import Search from '@/common/components/Search.vue'
-	import ConfirmDialog from '@/common/components/dialog/ConfirmDialog.vue'
 	import FollowSetting2 from '@/views/shorts/components/FollowSetting2.vue'
 	import ShareToFriend from '@/views/shorts/components/ShareToFriend.vue'
 	// import UserPanel from '@/common/components/UserPanel.vue'
