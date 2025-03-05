@@ -250,12 +250,14 @@
 	import { toast } from '@/modules/util'
 	import {
 		_checkImgUrl,
-		_copy,
 		_hideLoading,
 		_no,
 		_showLoading,
 		_sleep,
 	} from '@/common/utils'
+	import { useClipboard } from '@vueuse/core'
+
+	const { copy } = useClipboard()
 
 	defineOptions({
 		name: 'Share',
@@ -305,7 +307,7 @@
 		_showLoading()
 		await _sleep(500)
 		_hideLoading()
-		_copy(
+		copy(
 			props.item.share_info.share_link_desc + props.item.share_info.share_url
 		)
 		//TODO 抖音样式改了

@@ -32,21 +32,6 @@ export function _stop(e: Event) {
 	e.stopPropagation()
 }
 
-export function _copy(val) {
-	if (import.meta.env.SSR) return
-	const textarea = document.createElement('textarea')
-	document.body.appendChild(textarea)
-	textarea.style.position = 'absolute'
-	textarea.style.clip = 'rect(0 0 0 0)'
-	textarea.value = val
-	textarea.select()
-	if (document.execCommand) {
-		document.execCommand('copy', true)
-		toast('已复制')
-	}
-	document.body.removeChild(textarea)
-}
-
 export function _formatNumber(num) {
 	if (!num) return
 	if (num > 100000000) {

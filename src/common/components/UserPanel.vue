@@ -104,11 +104,6 @@
 						</div>
 						<div class="number" v-else>
 							<span>抖音号：{{ _getUserDouyinId(props.currentItem) }}</span>
-							<!-- <img
-								src="@/assets/img/icon/me/copy.png"
-								alt=""
-								@click.stop="_copy(_getUserDouyinId(props.currentItem))"
-							/> -->
 						</div>
 					</div>
 				</div>
@@ -293,7 +288,6 @@
 	import { reactive, ref, watch } from 'vue'
 	import {
 		_checkImgUrl,
-		_copy,
 		_formatNumber,
 		_getUserDouyinId,
 		_no,
