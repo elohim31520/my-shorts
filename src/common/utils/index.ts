@@ -164,7 +164,7 @@ export function sampleSize(arr, num) {
 	const list = []
 	const indexs = []
 	while (list.length !== num) {
-		const j = random(0, arr.length - 1)
+		const j = _random(0, arr.length - 1)
 		if (!indexs.includes(j)) {
 			list.push(arr[j])
 			indexs.push(j)

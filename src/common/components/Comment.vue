@@ -234,6 +234,7 @@
 	} from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
 	import { videoCommentsApi } from '@/api/shorts'
+	import BaseMask from '@/common/components/BaseMask.vue'
 
 	export default {
 		name: 'Comment',
