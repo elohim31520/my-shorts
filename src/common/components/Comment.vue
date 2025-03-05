@@ -90,7 +90,6 @@
 						<div class="replies" v-if="Number(item.sub_comment_count)">
 							<template v-if="item.showChildren">
 								<div class="reply" :key="i" v-for="(child, i) in item.children">
-									<!--                 v-longpress="e => showOptions(child)"-->
 									<div class="content">
 										<img
 											:src="_checkImgUrl(child.avatar)"
@@ -375,14 +374,6 @@
 					row.digg_count++
 				}
 				row.user_digged = !row.user_digged
-			},
-			showOptions(row) {
-				_showSelectDialog(this.options, (e) => {
-					if (e.id === 1) {
-						this.selectRow = row
-						this.showPrivateChat = true
-					}
-				})
 			},
 		},
 	}

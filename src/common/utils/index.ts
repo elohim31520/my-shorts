@@ -1,4 +1,3 @@
-import SelectDialog from '../components/dialog/SelectDialog.vue'
 import SimpleConfirmDialog from '../components/dialog/SimpleConfirmDialog.vue'
 import ConfirmDialog from '../components/dialog/ConfirmDialog.vue'
 import Loading from '../components/Loading.vue'
@@ -233,38 +232,6 @@ export function _showSimpleConfirmDialog(
 				okText: okText,
 				cancelText: cancelText,
 				onOk: tempOkCb,
-			})
-		},
-	})
-
-	const parent = document.createElement('div')
-	parent.classList.add('dialog-ctn', 'fade-in')
-	document.body.append(parent)
-	app.mount(parent)
-}
-
-export function _showSelectDialog(sexList, cb) {
-	if (import.meta.env.SSR) return
-
-	const remove = () => {
-		const parent = document.querySelector('.dialog-ctn')
-		parent.classList.replace('fade-in', 'fade-out')
-		setTimeout(() => {
-			parent.remove()
-		}, 300)
-	}
-
-	const tempCb = (e) => {
-		remove()
-		cb(e)
-	}
-
-	const app = createApp({
-		render() {
-			return h(SelectDialog, {
-				onCancel: remove,
-				list: sexList,
-				onOk: tempCb,
 			})
 		},
 	})
