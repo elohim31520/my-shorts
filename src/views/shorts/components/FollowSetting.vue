@@ -116,7 +116,7 @@
 	</from-bottom-dialog>
 </template>
 <script>
-	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
+	import FromBottomDialog from '@/views/shorts/common/dialog/FromBottomDialog.vue'
 	// import Switches from '../../message/components/swtich/switches'
 	import { DefaultUser } from '@/constants/shorts'
 	import { useShorts } from '@/views/shorts/hooks/useShorts'

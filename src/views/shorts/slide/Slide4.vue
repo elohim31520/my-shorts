@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="jsx">
-	import SlideItem from '@/common/components/slide/SlideItem.vue'
+	import SlideItem from '@/views/shorts/common/slide/SlideItem.vue'
 	import SlideList from './SlideList.vue'
 	import { recommendedVideo } from '@/api/shorts'
 

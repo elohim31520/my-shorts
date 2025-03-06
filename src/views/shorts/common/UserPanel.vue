@@ -277,9 +277,9 @@
 
 <script setup lang="ts">
 	import { reactive, ref, watch } from 'vue'
-	import Posters from '@/common/components/Posters.vue'
+	import Posters from '@/views/shorts/common/Posters.vue'
 	import { DefaultUser } from '@/constants/shorts'
-	import Loading from '@/common/components/Loading.vue'
+	import Loading from '@/views/shorts/common/Loading.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import { userVideoList } from '@/api/shorts'
 	import { useShorts } from '@/views/shorts/hooks/useShorts'

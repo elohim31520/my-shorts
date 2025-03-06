@@ -313,8 +313,8 @@
 
 	const { _formatNumber, _no } = useShorts()
 
-	import SlideItem from '@/common/components/slide/SlideItem.vue'
-	import SlideHorizontal from '@/common/components/slide/SlideHorizontal.vue'
+	import SlideItem from '@/views/shorts/common/slide/SlideItem.vue'
+	import SlideHorizontal from '@/views/shorts/common/slide/SlideHorizontal.vue'
 
 	defineOptions({
 		name: 'SearchPage',

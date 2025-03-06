@@ -1,9 +1,9 @@
 import { h, createApp } from 'vue'
 import { toast } from '@/modules/util'
 
-import Loading from '@/common/components/Loading.vue'
-import SlideUser from '@/common/components/slide/SlideUser.vue'
-import BaseVideo from '@/common/components/slide/BaseVideo.vue'
+import Loading from '@/views/shorts/common/Loading.vue'
+import SlideUser from '@/views/shorts/common/slide/SlideUser.vue'
+import BaseVideo from '@/views/shorts/common/slide/BaseVideo.vue'
 
 export function useShorts() {
 	function slideItemRender(props) {

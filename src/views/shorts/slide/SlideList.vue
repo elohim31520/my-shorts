@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="jsx">
-	import SlideVerticalInfinite from '@/common/components/slide/SlideVerticalInfinite.vue'
+	import SlideVerticalInfinite from '@/views/shorts/common/slide/SlideVerticalInfinite.vue'
 	import { onMounted, onUnmounted, reactive, ref } from 'vue'
 	import bus, { EVENT_KEY } from '@/modules/bus'
 	import { useBaseStore } from '@/stores/shorts'

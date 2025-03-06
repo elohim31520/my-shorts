@@ -38,7 +38,7 @@
 </template>
 <script>
 	import { useShorts } from '@/views/shorts/hooks/useShorts'
-	import BaseButton from '@/common/components/BaseButton.vue'
+	import BaseButton from '@/views/shorts/common/BaseButton.vue'
 
 	const { _formatNumber, _no } = useShorts()
 

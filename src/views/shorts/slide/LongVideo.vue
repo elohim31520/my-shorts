@@ -1,7 +1,7 @@
 <script setup>
 	import { reactive, ref, watch } from 'vue'
 	import { recommendedLongVideo } from '@/api/shorts'
-	import ScrollList from '@/common/components/ScrollList.vue'
+	import ScrollList from '@/views/shorts/common/ScrollList.vue'
 	import { formatTimestamp } from '@/modules/date'
 	import { useShorts } from '@/views/shorts/hooks/useShorts'
 

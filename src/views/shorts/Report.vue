@@ -237,7 +237,7 @@
 <script setup lang="ts">
 	import { onMounted, reactive } from 'vue'
 
-	import BaseHeader from '@/common/components/BaseHeader.vue'
+	import BaseHeader from '@/views/shorts/common/BaseHeader.vue'
 
 	import { redirect } from '@/modules/util'
 

@@ -90,8 +90,8 @@
 
 <script lang="jsx">
 	import { mapState } from 'pinia'
-	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
-	import LoadingCircle from '@/common/components/LoadingCircle'
+	import FromBottomDialog from '@/views/shorts/common/dialog/FromBottomDialog.vue'
+	import LoadingCircle from '@/views/shorts/common/LoadingCircle'
 	import { useBaseStore } from '@/stores/shorts'
 	// import DouyinCode from "./DouyinCode";
 	import { toast } from '@/modules/util'

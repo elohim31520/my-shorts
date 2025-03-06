@@ -32,9 +32,9 @@
 		slideTouchStart,
 	} from '@/modules/slide'
 	import { SlideType } from '@/constants/shorts'
-	import SlideItem from '@/common/components/slide/SlideItem.vue'
+	import SlideItem from '@/views/shorts/common/slide/SlideItem.vue'
 	import bus, { EVENT_KEY } from '@/modules/bus'
-	import Loading from '@/common/components/Loading.vue'
+	import Loading from '@/views/shorts/common/Loading.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import { _css } from '@/modules/dom'
 

@@ -98,7 +98,7 @@
 </template>
 
 <script setup lang="ts">
-	import Loading from '@/common/components/Loading.vue'
+	import Loading from '@/views/shorts/common/Loading.vue'
 	import ItemToolbar from './ItemToolbar.vue'
 	import ItemDesc from './ItemDesc.vue'
 	import bus, { EVENT_KEY } from '@/modules/bus'

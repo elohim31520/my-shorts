@@ -171,7 +171,7 @@
 	</from-bottom-dialog>
 </template>
 <script>
-	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
+	import FromBottomDialog from '@/views/shorts/common/dialog/FromBottomDialog.vue'
 	import { mapState } from 'pinia'
 	import { useBaseStore } from '@/stores/shorts'
 	import { toast } from '@/modules/util'

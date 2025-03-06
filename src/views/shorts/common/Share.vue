@@ -245,7 +245,7 @@
 </template>
 
 <script setup>
-	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
+	import FromBottomDialog from '@/views/shorts/common/dialog/FromBottomDialog.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import { toast } from '@/modules/util'
 	import { useClipboard } from '@vueuse/core'

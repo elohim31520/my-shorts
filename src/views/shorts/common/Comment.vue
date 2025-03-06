@@ -184,13 +184,13 @@
 <script lang="ts">
 	import AutoInput from './AutoInput.vue'
 	import { mapState } from 'pinia'
-	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
-	import Loading from '@/common/components/Loading.vue'
+	import FromBottomDialog from '@/views/shorts/common/dialog/FromBottomDialog.vue'
+	import Loading from '@/views/shorts/common/Loading.vue'
 	import Search from './Search.vue'
 	import { getTimeDifference } from '@/modules/date'
 	import { useBaseStore } from '@/stores/shorts'
 	import { videoCommentsApi } from '@/api/shorts'
-	import BaseMask from '@/common/components/BaseMask.vue'
+	import BaseMask from '@/views/shorts/common/BaseMask.vue'
 	import { useShorts } from '@/views/shorts/hooks/useShorts'
 
 	const { _formatNumber, _no } = useShorts()

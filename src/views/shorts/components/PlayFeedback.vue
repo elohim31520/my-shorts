@@ -162,7 +162,7 @@
 	</transition>
 </template>
 <script>
-	import Check from '@/common/components/Check.vue'
+	import Check from '@/views/shorts/common/Check.vue'
 	import { toast } from '@/modules/util'
 	import { useShorts } from '@/views/shorts/hooks/useShorts'
 

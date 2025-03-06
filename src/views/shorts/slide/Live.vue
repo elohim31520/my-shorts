@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="jsx">
-	import SlideItem from '@/common/components/slide/SlideItem.vue'
+	import SlideItem from '@/views/shorts/common/slide/SlideItem.vue'
 	import { onMounted, onUnmounted, reactive, ref } from 'vue'
 	import bus, { EVENT_KEY } from '@/modules/bus'
 	import SlideList from './SlideList.vue'

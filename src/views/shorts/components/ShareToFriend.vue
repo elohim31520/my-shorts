@@ -114,9 +114,9 @@
 	</from-bottom-dialog>
 </template>
 <script>
-	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
+	import FromBottomDialog from '@/views/shorts/common/dialog/FromBottomDialog.vue'
 	import { mapState } from 'pinia'
-	import Search from '@/common/components/Search.vue'
+	import Search from '@/views/shorts/common/Search.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	/*
 分享给朋友

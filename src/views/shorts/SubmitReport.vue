@@ -63,7 +63,7 @@
 
 	const { _hideLoading, _no, _showLoading } = useShorts()
 
-	import BaseHeader from '@/common/components/BaseHeader.vue'
+	import BaseHeader from '@/views/shorts/common/BaseHeader.vue'
 
 	defineOptions({
 		name: 'SubmitReport',

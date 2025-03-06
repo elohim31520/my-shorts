@@ -57,7 +57,7 @@
 	</div>
 </template>
 <script>
-	import Loading from '@/common/components/Loading.vue'
+	import Loading from '@/views/shorts/common/Loading.vue'
 	import bus from '@/modules/bus'
 	import { mapState } from 'pinia'
 	import { useBaseStore } from '@/stores/shorts'
