@@ -248,8 +248,10 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import { toast } from '@/modules/util'
-	import { _hideLoading, _no, _showLoading } from '@/common/utils'
 	import { useClipboard } from '@vueuse/core'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _hideLoading, _no, _showLoading } = useShorts()
 
 	const { copy } = useClipboard()
 

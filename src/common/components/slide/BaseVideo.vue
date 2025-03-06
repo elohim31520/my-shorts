@@ -98,7 +98,6 @@
 </template>
 
 <script setup lang="ts">
-	import { _stopPropagation } from '@/common/utils'
 	import Loading from '@/common/components/Loading.vue'
 	import ItemToolbar from './ItemToolbar.vue'
 	import ItemDesc from './ItemDesc.vue'
@@ -116,6 +115,9 @@
 	} from 'vue'
 	import { _css } from '@/modules/dom'
 	import { format } from 'date-fns'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _stopPropagation } = useShorts()
 
 	defineOptions({
 		name: 'BaseVideo',
@@ -200,7 +202,6 @@
 	})
 	const poster = computed(() => {
 		return props.item.video.poster ?? props.item.video.cover.url_list[0]
-		
 	})
 	const durationStyle = computed(() => {
 		return { width: state.playX + 'px' }

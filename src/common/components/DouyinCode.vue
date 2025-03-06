@@ -53,7 +53,9 @@
 	</transition>
 </template>
 <script>
-	import { _no } from '@/common/utils'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _no } = useShorts()
 
 	export default {
 		name: 'DouyinCode',

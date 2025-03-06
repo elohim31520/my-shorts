@@ -59,7 +59,9 @@
 </template>
 <script setup lang="ts">
 	import { onMounted, reactive } from 'vue'
-	import { _hideLoading, _no, _showLoading } from '@/common/utils'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _hideLoading, _no, _showLoading } = useShorts()
 
 	import BaseHeader from '@/common/components/BaseHeader.vue'
 

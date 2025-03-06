@@ -309,8 +309,9 @@
 	import Search from '../../components/Search.vue'
 	import Dom from '../../utils/dom'
 	import { computed, nextTick, onMounted, reactive, watch } from 'vue'
-	import { _formatNumber, _no } from '@/common/utils'
-	import { useNav } from '@/common/utils/hooks/useNav'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _formatNumber, _no } = useShorts()
 
 	import SlideItem from '@/common/components/slide/SlideItem.vue'
 	import SlideHorizontal from '@/common/components/slide/SlideHorizontal.vue'
@@ -794,8 +795,8 @@
 
 	function toggle() {
 		if (data.isExpand) {
-			console.log('TODO: Dialog');
-			
+			console.log('TODO: Dialog')
+
 			// _showSimpleConfirmDialog(
 			// 	'是否清空历史记录？',
 			// 	() => {

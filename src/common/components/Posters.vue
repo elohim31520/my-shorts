@@ -26,8 +26,10 @@
 </template>
 
 <script setup>
-	import { _formatNumber } from '@/common/utils'
 	import { useBaseStore } from '@/stores/shorts'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _formatNumber } = useShorts()
 
 	const store = useBaseStore()
 	const props = defineProps({

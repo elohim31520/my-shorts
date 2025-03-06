@@ -148,7 +148,7 @@
 					v-for="(item, i) in localFriends.all"
 					@click="share(item)"
 				>
-					<img :src="(item.avatar)" alt="" />
+					<img :src="item.avatar" alt="" />
 					<div class="right">
 						<span>{{ item.name }}</span>
 						<div class="share-btn" v-if="!item.select">分享</div>
@@ -175,8 +175,10 @@
 	import { mapState } from 'pinia'
 	import { useBaseStore } from '@/stores/shorts'
 	import { toast } from '@/modules/util'
-	import { _no } from '@/common/utils'
 	import { localStore } from '@/modules/storage'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _no } = useShorts()
 	/*
 	 * 分享到各种工具
 	 * */

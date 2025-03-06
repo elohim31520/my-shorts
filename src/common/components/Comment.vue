@@ -187,11 +187,13 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import Loading from '@/common/components/Loading.vue'
 	import Search from './Search.vue'
-	import { _formatNumber, _no } from '@/common/utils'
 	import { getTimeDifference } from '@/modules/date'
 	import { useBaseStore } from '@/stores/shorts'
 	import { videoCommentsApi } from '@/api/shorts'
 	import BaseMask from '@/common/components/BaseMask.vue'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _formatNumber, _no } = useShorts()
 
 	export default {
 		name: 'Comment',

@@ -68,25 +68,20 @@
 							: 0,
 					}"
 					ref="cover"
-					:src="(props.currentItem.author.cover_url[0].url_list[0])"
+					:src="props.currentItem.author.cover_url[0].url_list[0]"
 					@click="
-						state.previewImg = (
-							props.currentItem.author.cover_url[0].url_list[0]
-						)
+						state.previewImg = props.currentItem.author.cover_url[0].url_list[0]
 					"
 					alt=""
 					class="cover"
 				/>
 				<div class="avatar-wrapper">
 					<img
-						v-lazy="
-							(props.currentItem.author.avatar_168x168.url_list[0])
-						"
+						v-lazy="props.currentItem.author.avatar_168x168.url_list[0]"
 						class="avatar"
 						@click="
-							state.previewImg = (
+							state.previewImg =
 								props.currentItem.author.avatar_300x300.url_list[0]
-							)
 						"
 					/>
 					<div class="description">
@@ -179,7 +174,7 @@
 						:key="i"
 						v-for="(item, i) in props.currentItem.author.card_entries"
 					>
-						<img :src="(item.icon_dark.url_list[0])" alt="" />
+						<img :src="item.icon_dark.url_list[0]" alt="" />
 						<div class="right">
 							<div class="top">{{ item.title }}</div>
 							<div class="bottom">{{ item.sub_title }}</div>
@@ -246,7 +241,7 @@
 						<img
 							:style="item.select ? 'opacity: .5;' : ''"
 							class="avatar"
-							:src="(item.avatar)"
+							:src="item.avatar"
 							alt=""
 						/>
 						<span class="name">{{ item.name }}</span>
@@ -282,18 +277,14 @@
 
 <script setup lang="ts">
 	import { reactive, ref, watch } from 'vue'
-	import {
-		_formatNumber,
-		_getUserDouyinId,
-		_no,
-		_stopPropagation,
-	} from '@/common/utils'
-	import { useNav } from '@/common/utils/hooks/useNav'
 	import Posters from '@/common/components/Posters.vue'
 	import { DefaultUser } from '@/constants/shorts'
 	import Loading from '@/common/components/Loading.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import { userVideoList } from '@/api/shorts'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _formatNumber, _getUserDouyinId, _no, _stopPropagation } = useShorts()
 
 	const $nav = useNav()
 	const baseStore = useBaseStore()

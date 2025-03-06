@@ -1,10 +1,11 @@
 <script setup>
 	import { reactive, ref, watch } from 'vue'
-	import { _formatNumber, _stopPropagation } from '@/common/utils'
 	import { recommendedLongVideo } from '@/api/shorts'
 	import ScrollList from '@/common/components/ScrollList.vue'
-	import { useNav } from '@/common/utils/hooks/useNav'
 	import { formatTimestamp } from '@/modules/date'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _formatNumber, _stopPropagation } = useShorts()
 
 	const props = defineProps({
 		active: Boolean,

@@ -225,12 +225,14 @@
 	import Live from '@/views/shorts/slide/Live.vue'
 	import Slide4 from '@/views/shorts/slide/Slide4.vue'
 	import { DefaultUser } from '@/constants/shorts'
-	import { _no } from '@/common/utils'
 	// import LongVideo from '@/views/shorts/slide/LongVideo.vue'
 	import { useBaseStore } from '@/stores/shorts'
 	import BaseMask from '@/common/components/BaseMask.vue'
 	import Footer from './Footer.vue'
 	import { redirect } from '@/modules/util'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _no } = useShorts()
 
 	const baseStore = useBaseStore()
 	const uploader = ref()

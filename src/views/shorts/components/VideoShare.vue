@@ -61,7 +61,7 @@
 			</div>
 			<div class="friends">
 				<div class="item" :key="i" v-for="(item, i) in friends.all">
-					<img class="left" v-lazy="(item.avatar)" alt="" />
+					<img class="left" v-lazy="item.avatar" alt="" />
 					<div class="right">
 						<span>{{ item.name }}</span>
 						<dy-button
@@ -93,14 +93,11 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	import LoadingCircle from '@/common/components/LoadingCircle'
 	import { useBaseStore } from '@/stores/shorts'
-	import {
-		_hideLoading,
-		_no,
-		_showLoading,
-		_stopPropagation,
-	} from '@/common/utils'
 	// import DouyinCode from "./DouyinCode";
 	import { toast } from '@/modules/util'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _hideLoading, _no, _showLoading, _stopPropagation } = useShorts()
 
 	export default {
 		name: 'Share',

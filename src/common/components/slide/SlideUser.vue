@@ -22,7 +22,7 @@
 					v-for="(i, index) in modelValue.videos.slice(0, 3)"
 					@click="_no"
 				>
-					<img class="poster" :src="(i.cover)" />
+					<img class="poster" :src="i.cover" />
 					<div class="num">
 						<img class="love" src="/shorts/img/icon/love.svg" alt="" />
 						<span>{{ _formatNumber(i.digg_count) }}</span>
@@ -37,8 +37,10 @@
 	</div>
 </template>
 <script>
-	import { _formatNumber, _no } from '../../utils'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
 	import BaseButton from '@/common/components/BaseButton.vue'
+
+	const { _formatNumber, _no } = useShorts()
 
 	export default {
 		name: 'SlideUser',

@@ -29,7 +29,9 @@
 	import bus from '@/modules/bus'
 	import { useBaseStore } from '@/stores/shorts'
 	import { _css } from '@/modules/dom'
-	import { _stopPropagation } from '@/common/utils'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _stopPropagation } = useShorts()
 
 	export default {
 		name: 'BaseSlideList',

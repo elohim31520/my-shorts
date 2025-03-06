@@ -163,8 +163,10 @@
 </template>
 <script>
 	import Check from '@/common/components/Check.vue'
-	import { _hideLoading, _showLoading } from '@/common/utils'
 	import { toast } from '@/modules/util'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _hideLoading, _showLoading } = useShorts()
 
 	export default {
 		name: 'Test',

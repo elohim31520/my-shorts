@@ -66,9 +66,11 @@
 	import SlideItem from '@/common/components/slide/SlideItem.vue'
 	import { onMounted, onUnmounted, reactive, ref } from 'vue'
 	import bus, { EVENT_KEY } from '@/modules/bus'
-	import { _stopPropagation } from '@/common/utils'
 	import SlideList from './SlideList.vue'
 	import { recommendedVideo } from '@/api/shorts'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _stopPropagation } = useShorts()
 
 	const props = defineProps({
 		cbs: {

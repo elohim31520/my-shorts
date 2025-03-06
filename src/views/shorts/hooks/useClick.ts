@@ -1,4 +1,7 @@
-import { _stopPropagation } from '@/common/utils'
+import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+const { _stopPropagation } = useShorts()
+
 
 //解决SlideVerticalInfinite组件，每次滑动之后，click事件总是要等到2秒之后点击会发触发的bug
 //具体原因未知

@@ -23,7 +23,8 @@
 	import { ref, watch, useTemplateRef } from 'vue'
 	import Dom, { _css } from '@/modules/dom'
 	import bus, { EVENT_KEY } from '@/modules/bus'
-	import { _stopPropagation } from '@/common/utils'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+	const { _stopPropagation } = useShorts()
 
 	defineOptions({ name: 'FromBottomDialog' })
 

@@ -119,7 +119,9 @@
 	import FromBottomDialog from '@/common/components/dialog/FromBottomDialog.vue'
 	// import Switches from '../../message/components/swtich/switches'
 	import { DefaultUser } from '@/constants/shorts'
-	import { _getUserDouyinId } from '@/common/utils'
+	import { useShorts } from '@/views/shorts/hooks/useShorts'
+
+	const { _getUserDouyinId } = useShorts()
 
 	export default {
 		name: 'FollowSetting',
